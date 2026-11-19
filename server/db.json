@@ -1,0 +1,1403 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Leanne Graham",
+      "username": "Bret",
+      "email": "Sincere@april.biz",
+      "password": "Bret#Maple2026!",
+      "address": {
+        "street": "Kulas Light",
+        "suite": "Apt. 556",
+        "city": "Gwenborough",
+        "zipcode": "92998-3874",
+        "geo": {
+          "lat": "-37.3159",
+          "lng": "81.1496"
+        }
+      },
+      "phone": "1-770-736-8031 x56442",
+      "website": "hildegard.org",
+      "company": {
+        "name": "Romaguera-Crona",
+        "catchPhrase": "Multi-layered client-server neural-net",
+        "bs": "harness real-time e-markets"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Ervin Howell",
+      "username": "Antonette",
+      "email": "Shanna@melissa.tv",
+      "password": "Anto-River84$x",
+      "address": {
+        "street": "Victor Plains",
+        "suite": "Suite 879",
+        "city": "Wisokyburgh",
+        "zipcode": "90566-7771",
+        "geo": {
+          "lat": "-43.9509",
+          "lng": "-34.4618"
+        }
+      },
+      "phone": "010-692-6593 x09125",
+      "website": "anastasia.net",
+      "company": {
+        "name": "Deckow-Crist",
+        "catchPhrase": "Proactive didactic contingency",
+        "bs": "synergize scalable supply-chains"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Clementine Bauch",
+      "username": "Samantha",
+      "email": "Nathan@yesenia.net",
+      "password": "Sam_Lantern91#k",
+      "address": {
+        "street": "Douglas Extension",
+        "suite": "Suite 847",
+        "city": "McKenziehaven",
+        "zipcode": "59590-4157",
+        "geo": {
+          "lat": "-68.6102",
+          "lng": "-47.0653"
+        }
+      },
+      "phone": "1-463-123-4447",
+      "website": "ramiro.info",
+      "company": {
+        "name": "Romaguera-Jacobson",
+        "catchPhrase": "Face to face bifurcated interface",
+        "bs": "e-enable strategic applications"
+      }
+    }
+  ],
+  "todos": [
+    {
+      "userId": 1,
+      "id": 1,
+      "title": "Finish the React exercise",
+      "completed": true
+    },
+    {
+      "userId": 1,
+      "id": 2,
+      "title": "Read about useEffect",
+      "completed": false
+    },
+    {
+      "userId": 1,
+      "id": 3,
+      "title": "Prepare project sketches",
+      "completed": false
+    },
+    {
+      "userId": 1,
+      "id": 4,
+      "title": "Install json-server",
+      "completed": true
+    },
+    {
+      "userId": 1,
+      "id": 5,
+      "title": "Write the login page",
+      "completed": false
+    },
+    {
+      "userId": 1,
+      "id": 6,
+      "title": "Test the register form",
+      "completed": false
+    },
+    {
+      "userId": 1,
+      "id": 7,
+      "title": "Fix CSS of the header",
+      "completed": true
+    },
+    {
+      "userId": 1,
+      "id": 8,
+      "title": "Review code with partner",
+      "completed": false
+    },
+    {
+      "userId": 1,
+      "id": 9,
+      "title": "Push changes to Git",
+      "completed": false
+    },
+    {
+      "userId": 1,
+      "id": 10,
+      "title": "Clean console logs",
+      "completed": true
+    },
+    {
+      "userId": 2,
+      "id": 11,
+      "title": "Finish the React exercise",
+      "completed": true
+    },
+    {
+      "userId": 2,
+      "id": 12,
+      "title": "Read about useEffect",
+      "completed": false
+    },
+    {
+      "userId": 2,
+      "id": 13,
+      "title": "Prepare project sketches",
+      "completed": false
+    },
+    {
+      "userId": 2,
+      "id": 14,
+      "title": "Install json-server",
+      "completed": true
+    },
+    {
+      "userId": 2,
+      "id": 15,
+      "title": "Write the login page",
+      "completed": false
+    },
+    {
+      "userId": 2,
+      "id": 16,
+      "title": "Test the register form",
+      "completed": false
+    },
+    {
+      "userId": 2,
+      "id": 17,
+      "title": "Fix CSS of the header",
+      "completed": true
+    },
+    {
+      "userId": 2,
+      "id": 18,
+      "title": "Review code with partner",
+      "completed": false
+    },
+    {
+      "userId": 2,
+      "id": 19,
+      "title": "Push changes to Git",
+      "completed": false
+    },
+    {
+      "userId": 2,
+      "id": 20,
+      "title": "Clean console logs",
+      "completed": true
+    },
+    {
+      "userId": 3,
+      "id": 21,
+      "title": "Finish the React exercise",
+      "completed": true
+    },
+    {
+      "userId": 3,
+      "id": 22,
+      "title": "Read about useEffect",
+      "completed": false
+    },
+    {
+      "userId": 3,
+      "id": 23,
+      "title": "Prepare project sketches",
+      "completed": false
+    },
+    {
+      "userId": 3,
+      "id": 24,
+      "title": "Install json-server",
+      "completed": true
+    },
+    {
+      "userId": 3,
+      "id": 25,
+      "title": "Write the login page",
+      "completed": false
+    },
+    {
+      "userId": 3,
+      "id": 26,
+      "title": "Test the register form",
+      "completed": false
+    },
+    {
+      "userId": 3,
+      "id": 27,
+      "title": "Fix CSS of the header",
+      "completed": true
+    },
+    {
+      "userId": 3,
+      "id": 28,
+      "title": "Review code with partner",
+      "completed": false
+    },
+    {
+      "userId": 3,
+      "id": 29,
+      "title": "Push changes to Git",
+      "completed": false
+    },
+    {
+      "userId": 3,
+      "id": 30,
+      "title": "Clean console logs",
+      "completed": true
+    }
+  ],
+  "posts": [
+    {
+      "userId": 1,
+      "id": 1,
+      "title": "Getting started with React",
+      "body": "React lets you build user interfaces from small reusable components.\nStart by thinking about which parts of the page repeat."
+    },
+    {
+      "userId": 1,
+      "id": 2,
+      "title": "Why use custom hooks",
+      "body": "Custom hooks help you avoid repeating logic.\nMove shared fetch code into one hook and reuse it everywhere."
+    },
+    {
+      "userId": 1,
+      "id": 3,
+      "title": "Routing tips",
+      "body": "Plan your URLs before writing code.\nA clear URL structure makes navigation and refresh much easier."
+    },
+    {
+      "userId": 1,
+      "id": 4,
+      "title": "Handling errors nicely",
+      "body": "Always show the user a clear message when a request fails.\nDo not leave the screen empty without an explanation."
+    },
+    {
+      "userId": 1,
+      "id": 5,
+      "title": "Working with forms",
+      "body": "Controlled components keep the input value in state.\nValidate on submit and show messages next to the fields."
+    },
+    {
+      "userId": 2,
+      "id": 6,
+      "title": "Getting started with React",
+      "body": "React lets you build user interfaces from small reusable components.\nStart by thinking about which parts of the page repeat."
+    },
+    {
+      "userId": 2,
+      "id": 7,
+      "title": "Why use custom hooks",
+      "body": "Custom hooks help you avoid repeating logic.\nMove shared fetch code into one hook and reuse it everywhere."
+    },
+    {
+      "userId": 2,
+      "id": 8,
+      "title": "Routing tips",
+      "body": "Plan your URLs before writing code.\nA clear URL structure makes navigation and refresh much easier."
+    },
+    {
+      "userId": 2,
+      "id": 9,
+      "title": "Handling errors nicely",
+      "body": "Always show the user a clear message when a request fails.\nDo not leave the screen empty without an explanation."
+    },
+    {
+      "userId": 3,
+      "id": 10,
+      "title": "Getting started with React",
+      "body": "React lets you build user interfaces from small reusable components.\nStart by thinking about which parts of the page repeat."
+    },
+    {
+      "userId": 3,
+      "id": 11,
+      "title": "Why use custom hooks",
+      "body": "Custom hooks help you avoid repeating logic.\nMove shared fetch code into one hook and reuse it everywhere."
+    },
+    {
+      "userId": 3,
+      "id": 12,
+      "title": "Routing tips",
+      "body": "Plan your URLs before writing code.\nA clear URL structure makes navigation and refresh much easier."
+    },
+    {
+      "userId": 3,
+      "id": 13,
+      "title": "Handling errors nicely",
+      "body": "Always show the user a clear message when a request fails.\nDo not leave the screen empty without an explanation."
+    }
+  ],
+  "comments": [
+    {
+      "postId": 1,
+      "id": 1,
+      "name": "Very helpful, thanks",
+      "email": "Jayne_Kuhic@sydney.com",
+      "body": "I tried this and it works well."
+    },
+    {
+      "postId": 1,
+      "id": 2,
+      "name": "I had the same problem",
+      "email": "Nikita@garfield.biz",
+      "body": "Could you add an example?"
+    },
+    {
+      "postId": 1,
+      "id": 3,
+      "name": "Nice summary",
+      "email": "Lew@alysha.tv",
+      "body": "Clear and to the point."
+    },
+    {
+      "postId": 2,
+      "id": 4,
+      "name": "I had the same problem",
+      "email": "Nikita@garfield.biz",
+      "body": "Could you add an example?"
+    },
+    {
+      "postId": 2,
+      "id": 5,
+      "name": "Nice summary",
+      "email": "Lew@alysha.tv",
+      "body": "Clear and to the point."
+    },
+    {
+      "postId": 2,
+      "id": 6,
+      "name": "Great explanation",
+      "email": "Eliza@gardner.biz",
+      "body": "Thanks for sharing, this saved me a lot of time."
+    },
+    {
+      "postId": 3,
+      "id": 7,
+      "name": "Nice summary",
+      "email": "Lew@alysha.tv",
+      "body": "Clear and to the point."
+    },
+    {
+      "postId": 3,
+      "id": 8,
+      "name": "Great explanation",
+      "email": "Eliza@gardner.biz",
+      "body": "Thanks for sharing, this saved me a lot of time."
+    },
+    {
+      "postId": 3,
+      "id": 9,
+      "name": "Very helpful, thanks",
+      "email": "Jayne_Kuhic@sydney.com",
+      "body": "I tried this and it works well."
+    },
+    {
+      "postId": 4,
+      "id": 10,
+      "name": "Great explanation",
+      "email": "Eliza@gardner.biz",
+      "body": "Thanks for sharing, this saved me a lot of time."
+    },
+    {
+      "postId": 4,
+      "id": 11,
+      "name": "Very helpful, thanks",
+      "email": "Jayne_Kuhic@sydney.com",
+      "body": "I tried this and it works well."
+    },
+    {
+      "postId": 4,
+      "id": 12,
+      "name": "I had the same problem",
+      "email": "Nikita@garfield.biz",
+      "body": "Could you add an example?"
+    },
+    {
+      "postId": 5,
+      "id": 13,
+      "name": "Very helpful, thanks",
+      "email": "Jayne_Kuhic@sydney.com",
+      "body": "I tried this and it works well."
+    },
+    {
+      "postId": 5,
+      "id": 14,
+      "name": "I had the same problem",
+      "email": "Nikita@garfield.biz",
+      "body": "Could you add an example?"
+    },
+    {
+      "postId": 5,
+      "id": 15,
+      "name": "Nice summary",
+      "email": "Lew@alysha.tv",
+      "body": "Clear and to the point."
+    },
+    {
+      "postId": 6,
+      "id": 16,
+      "name": "I had the same problem",
+      "email": "Nikita@garfield.biz",
+      "body": "Could you add an example?"
+    },
+    {
+      "postId": 6,
+      "id": 17,
+      "name": "Nice summary",
+      "email": "Lew@alysha.tv",
+      "body": "Clear and to the point."
+    },
+    {
+      "postId": 6,
+      "id": 18,
+      "name": "Great explanation",
+      "email": "Eliza@gardner.biz",
+      "body": "Thanks for sharing, this saved me a lot of time."
+    },
+    {
+      "postId": 7,
+      "id": 19,
+      "name": "Nice summary",
+      "email": "Lew@alysha.tv",
+      "body": "Clear and to the point."
+    },
+    {
+      "postId": 7,
+      "id": 20,
+      "name": "Great explanation",
+      "email": "Eliza@gardner.biz",
+      "body": "Thanks for sharing, this saved me a lot of time."
+    },
+    {
+      "postId": 7,
+      "id": 21,
+      "name": "Very helpful, thanks",
+      "email": "Jayne_Kuhic@sydney.com",
+      "body": "I tried this and it works well."
+    },
+    {
+      "postId": 8,
+      "id": 22,
+      "name": "Great explanation",
+      "email": "Eliza@gardner.biz",
+      "body": "Thanks for sharing, this saved me a lot of time."
+    },
+    {
+      "postId": 8,
+      "id": 23,
+      "name": "Very helpful, thanks",
+      "email": "Jayne_Kuhic@sydney.com",
+      "body": "I tried this and it works well."
+    },
+    {
+      "postId": 8,
+      "id": 24,
+      "name": "I had the same problem",
+      "email": "Nikita@garfield.biz",
+      "body": "Could you add an example?"
+    },
+    {
+      "postId": 9,
+      "id": 25,
+      "name": "Very helpful, thanks",
+      "email": "Jayne_Kuhic@sydney.com",
+      "body": "I tried this and it works well."
+    },
+    {
+      "postId": 9,
+      "id": 26,
+      "name": "I had the same problem",
+      "email": "Nikita@garfield.biz",
+      "body": "Could you add an example?"
+    },
+    {
+      "postId": 9,
+      "id": 27,
+      "name": "Nice summary",
+      "email": "Lew@alysha.tv",
+      "body": "Clear and to the point."
+    },
+    {
+      "postId": 10,
+      "id": 28,
+      "name": "I had the same problem",
+      "email": "Nikita@garfield.biz",
+      "body": "Could you add an example?"
+    },
+    {
+      "postId": 10,
+      "id": 29,
+      "name": "Nice summary",
+      "email": "Lew@alysha.tv",
+      "body": "Clear and to the point."
+    },
+    {
+      "postId": 10,
+      "id": 30,
+      "name": "Great explanation",
+      "email": "Eliza@gardner.biz",
+      "body": "Thanks for sharing, this saved me a lot of time."
+    },
+    {
+      "postId": 11,
+      "id": 31,
+      "name": "Nice summary",
+      "email": "Lew@alysha.tv",
+      "body": "Clear and to the point."
+    },
+    {
+      "postId": 11,
+      "id": 32,
+      "name": "Great explanation",
+      "email": "Eliza@gardner.biz",
+      "body": "Thanks for sharing, this saved me a lot of time."
+    },
+    {
+      "postId": 11,
+      "id": 33,
+      "name": "Very helpful, thanks",
+      "email": "Jayne_Kuhic@sydney.com",
+      "body": "I tried this and it works well."
+    },
+    {
+      "postId": 12,
+      "id": 34,
+      "name": "Great explanation",
+      "email": "Eliza@gardner.biz",
+      "body": "Thanks for sharing, this saved me a lot of time."
+    },
+    {
+      "postId": 12,
+      "id": 35,
+      "name": "Very helpful, thanks",
+      "email": "Jayne_Kuhic@sydney.com",
+      "body": "I tried this and it works well."
+    },
+    {
+      "postId": 12,
+      "id": 36,
+      "name": "I had the same problem",
+      "email": "Nikita@garfield.biz",
+      "body": "Could you add an example?"
+    },
+    {
+      "postId": 13,
+      "id": 37,
+      "name": "Very helpful, thanks",
+      "email": "Jayne_Kuhic@sydney.com",
+      "body": "I tried this and it works well."
+    },
+    {
+      "postId": 13,
+      "id": 38,
+      "name": "I had the same problem",
+      "email": "Nikita@garfield.biz",
+      "body": "Could you add an example?"
+    },
+    {
+      "postId": 13,
+      "id": 39,
+      "name": "Nice summary",
+      "email": "Lew@alysha.tv",
+      "body": "Clear and to the point."
+    }
+  ],
+  "albums": [
+    {
+      "userId": 1,
+      "id": 1,
+      "title": "Trip to the north"
+    },
+    {
+      "userId": 1,
+      "id": 2,
+      "title": "Family events"
+    },
+    {
+      "userId": 2,
+      "id": 3,
+      "title": "Nature"
+    },
+    {
+      "userId": 2,
+      "id": 4,
+      "title": "Food"
+    },
+    {
+      "userId": 3,
+      "id": 5,
+      "title": "City life"
+    },
+    {
+      "userId": 3,
+      "id": 6,
+      "title": "Flowers"
+    }
+  ],
+  "photos": [
+    {
+      "albumId": 1,
+      "id": 1,
+      "title": "Trip to the north - photo 1",
+      "url": "https://picsum.photos/seed/1/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/1/150/150"
+    },
+    {
+      "albumId": 1,
+      "id": 2,
+      "title": "Trip to the north - photo 2",
+      "url": "https://picsum.photos/seed/2/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/2/150/150"
+    },
+    {
+      "albumId": 1,
+      "id": 3,
+      "title": "Trip to the north - photo 3",
+      "url": "https://picsum.photos/seed/3/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/3/150/150"
+    },
+    {
+      "albumId": 1,
+      "id": 4,
+      "title": "Trip to the north - photo 4",
+      "url": "https://picsum.photos/seed/4/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/4/150/150"
+    },
+    {
+      "albumId": 1,
+      "id": 5,
+      "title": "Trip to the north - photo 5",
+      "url": "https://picsum.photos/seed/5/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/5/150/150"
+    },
+    {
+      "albumId": 1,
+      "id": 6,
+      "title": "Trip to the north - photo 6",
+      "url": "https://picsum.photos/seed/6/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/6/150/150"
+    },
+    {
+      "albumId": 1,
+      "id": 7,
+      "title": "Trip to the north - photo 7",
+      "url": "https://picsum.photos/seed/7/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/7/150/150"
+    },
+    {
+      "albumId": 1,
+      "id": 8,
+      "title": "Trip to the north - photo 8",
+      "url": "https://picsum.photos/seed/8/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/8/150/150"
+    },
+    {
+      "albumId": 1,
+      "id": 9,
+      "title": "Trip to the north - photo 9",
+      "url": "https://picsum.photos/seed/9/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/9/150/150"
+    },
+    {
+      "albumId": 1,
+      "id": 10,
+      "title": "Trip to the north - photo 10",
+      "url": "https://picsum.photos/seed/10/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/10/150/150"
+    },
+    {
+      "albumId": 1,
+      "id": 11,
+      "title": "Trip to the north - photo 11",
+      "url": "https://picsum.photos/seed/11/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/11/150/150"
+    },
+    {
+      "albumId": 1,
+      "id": 12,
+      "title": "Trip to the north - photo 12",
+      "url": "https://picsum.photos/seed/12/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/12/150/150"
+    },
+    {
+      "albumId": 1,
+      "id": 13,
+      "title": "Trip to the north - photo 13",
+      "url": "https://picsum.photos/seed/13/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/13/150/150"
+    },
+    {
+      "albumId": 1,
+      "id": 14,
+      "title": "Trip to the north - photo 14",
+      "url": "https://picsum.photos/seed/14/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/14/150/150"
+    },
+    {
+      "albumId": 1,
+      "id": 15,
+      "title": "Trip to the north - photo 15",
+      "url": "https://picsum.photos/seed/15/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/15/150/150"
+    },
+    {
+      "albumId": 1,
+      "id": 16,
+      "title": "Trip to the north - photo 16",
+      "url": "https://picsum.photos/seed/16/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/16/150/150"
+    },
+    {
+      "albumId": 1,
+      "id": 17,
+      "title": "Trip to the north - photo 17",
+      "url": "https://picsum.photos/seed/17/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/17/150/150"
+    },
+    {
+      "albumId": 1,
+      "id": 18,
+      "title": "Trip to the north - photo 18",
+      "url": "https://picsum.photos/seed/18/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/18/150/150"
+    },
+    {
+      "albumId": 1,
+      "id": 19,
+      "title": "Trip to the north - photo 19",
+      "url": "https://picsum.photos/seed/19/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/19/150/150"
+    },
+    {
+      "albumId": 1,
+      "id": 20,
+      "title": "Trip to the north - photo 20",
+      "url": "https://picsum.photos/seed/20/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/20/150/150"
+    },
+    {
+      "albumId": 1,
+      "id": 21,
+      "title": "Trip to the north - photo 21",
+      "url": "https://picsum.photos/seed/21/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/21/150/150"
+    },
+    {
+      "albumId": 1,
+      "id": 22,
+      "title": "Trip to the north - photo 22",
+      "url": "https://picsum.photos/seed/22/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/22/150/150"
+    },
+    {
+      "albumId": 1,
+      "id": 23,
+      "title": "Trip to the north - photo 23",
+      "url": "https://picsum.photos/seed/23/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/23/150/150"
+    },
+    {
+      "albumId": 1,
+      "id": 24,
+      "title": "Trip to the north - photo 24",
+      "url": "https://picsum.photos/seed/24/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/24/150/150"
+    },
+    {
+      "albumId": 1,
+      "id": 25,
+      "title": "Trip to the north - photo 25",
+      "url": "https://picsum.photos/seed/25/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/25/150/150"
+    },
+    {
+      "albumId": 1,
+      "id": 26,
+      "title": "Trip to the north - photo 26",
+      "url": "https://picsum.photos/seed/26/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/26/150/150"
+    },
+    {
+      "albumId": 1,
+      "id": 27,
+      "title": "Trip to the north - photo 27",
+      "url": "https://picsum.photos/seed/27/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/27/150/150"
+    },
+    {
+      "albumId": 1,
+      "id": 28,
+      "title": "Trip to the north - photo 28",
+      "url": "https://picsum.photos/seed/28/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/28/150/150"
+    },
+    {
+      "albumId": 1,
+      "id": 29,
+      "title": "Trip to the north - photo 29",
+      "url": "https://picsum.photos/seed/29/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/29/150/150"
+    },
+    {
+      "albumId": 1,
+      "id": 30,
+      "title": "Trip to the north - photo 30",
+      "url": "https://picsum.photos/seed/30/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/30/150/150"
+    },
+    {
+      "albumId": 2,
+      "id": 31,
+      "title": "Family events - photo 1",
+      "url": "https://picsum.photos/seed/31/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/31/150/150"
+    },
+    {
+      "albumId": 2,
+      "id": 32,
+      "title": "Family events - photo 2",
+      "url": "https://picsum.photos/seed/32/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/32/150/150"
+    },
+    {
+      "albumId": 2,
+      "id": 33,
+      "title": "Family events - photo 3",
+      "url": "https://picsum.photos/seed/33/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/33/150/150"
+    },
+    {
+      "albumId": 2,
+      "id": 34,
+      "title": "Family events - photo 4",
+      "url": "https://picsum.photos/seed/34/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/34/150/150"
+    },
+    {
+      "albumId": 2,
+      "id": 35,
+      "title": "Family events - photo 5",
+      "url": "https://picsum.photos/seed/35/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/35/150/150"
+    },
+    {
+      "albumId": 2,
+      "id": 36,
+      "title": "Family events - photo 6",
+      "url": "https://picsum.photos/seed/36/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/36/150/150"
+    },
+    {
+      "albumId": 2,
+      "id": 37,
+      "title": "Family events - photo 7",
+      "url": "https://picsum.photos/seed/37/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/37/150/150"
+    },
+    {
+      "albumId": 2,
+      "id": 38,
+      "title": "Family events - photo 8",
+      "url": "https://picsum.photos/seed/38/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/38/150/150"
+    },
+    {
+      "albumId": 2,
+      "id": 39,
+      "title": "Family events - photo 9",
+      "url": "https://picsum.photos/seed/39/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/39/150/150"
+    },
+    {
+      "albumId": 2,
+      "id": 40,
+      "title": "Family events - photo 10",
+      "url": "https://picsum.photos/seed/40/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/40/150/150"
+    },
+    {
+      "albumId": 2,
+      "id": 41,
+      "title": "Family events - photo 11",
+      "url": "https://picsum.photos/seed/41/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/41/150/150"
+    },
+    {
+      "albumId": 2,
+      "id": 42,
+      "title": "Family events - photo 12",
+      "url": "https://picsum.photos/seed/42/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/42/150/150"
+    },
+    {
+      "albumId": 2,
+      "id": 43,
+      "title": "Family events - photo 13",
+      "url": "https://picsum.photos/seed/43/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/43/150/150"
+    },
+    {
+      "albumId": 2,
+      "id": 44,
+      "title": "Family events - photo 14",
+      "url": "https://picsum.photos/seed/44/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/44/150/150"
+    },
+    {
+      "albumId": 2,
+      "id": 45,
+      "title": "Family events - photo 15",
+      "url": "https://picsum.photos/seed/45/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/45/150/150"
+    },
+    {
+      "albumId": 2,
+      "id": 46,
+      "title": "Family events - photo 16",
+      "url": "https://picsum.photos/seed/46/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/46/150/150"
+    },
+    {
+      "albumId": 2,
+      "id": 47,
+      "title": "Family events - photo 17",
+      "url": "https://picsum.photos/seed/47/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/47/150/150"
+    },
+    {
+      "albumId": 2,
+      "id": 48,
+      "title": "Family events - photo 18",
+      "url": "https://picsum.photos/seed/48/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/48/150/150"
+    },
+    {
+      "albumId": 2,
+      "id": 49,
+      "title": "Family events - photo 19",
+      "url": "https://picsum.photos/seed/49/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/49/150/150"
+    },
+    {
+      "albumId": 2,
+      "id": 50,
+      "title": "Family events - photo 20",
+      "url": "https://picsum.photos/seed/50/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/50/150/150"
+    },
+    {
+      "albumId": 2,
+      "id": 51,
+      "title": "Family events - photo 21",
+      "url": "https://picsum.photos/seed/51/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/51/150/150"
+    },
+    {
+      "albumId": 2,
+      "id": 52,
+      "title": "Family events - photo 22",
+      "url": "https://picsum.photos/seed/52/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/52/150/150"
+    },
+    {
+      "albumId": 2,
+      "id": 53,
+      "title": "Family events - photo 23",
+      "url": "https://picsum.photos/seed/53/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/53/150/150"
+    },
+    {
+      "albumId": 2,
+      "id": 54,
+      "title": "Family events - photo 24",
+      "url": "https://picsum.photos/seed/54/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/54/150/150"
+    },
+    {
+      "albumId": 2,
+      "id": 55,
+      "title": "Family events - photo 25",
+      "url": "https://picsum.photos/seed/55/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/55/150/150"
+    },
+    {
+      "albumId": 2,
+      "id": 56,
+      "title": "Family events - photo 26",
+      "url": "https://picsum.photos/seed/56/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/56/150/150"
+    },
+    {
+      "albumId": 2,
+      "id": 57,
+      "title": "Family events - photo 27",
+      "url": "https://picsum.photos/seed/57/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/57/150/150"
+    },
+    {
+      "albumId": 2,
+      "id": 58,
+      "title": "Family events - photo 28",
+      "url": "https://picsum.photos/seed/58/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/58/150/150"
+    },
+    {
+      "albumId": 2,
+      "id": 59,
+      "title": "Family events - photo 29",
+      "url": "https://picsum.photos/seed/59/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/59/150/150"
+    },
+    {
+      "albumId": 2,
+      "id": 60,
+      "title": "Family events - photo 30",
+      "url": "https://picsum.photos/seed/60/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/60/150/150"
+    },
+    {
+      "albumId": 3,
+      "id": 61,
+      "title": "Nature - photo 1",
+      "url": "https://picsum.photos/seed/61/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/61/150/150"
+    },
+    {
+      "albumId": 3,
+      "id": 62,
+      "title": "Nature - photo 2",
+      "url": "https://picsum.photos/seed/62/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/62/150/150"
+    },
+    {
+      "albumId": 3,
+      "id": 63,
+      "title": "Nature - photo 3",
+      "url": "https://picsum.photos/seed/63/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/63/150/150"
+    },
+    {
+      "albumId": 3,
+      "id": 64,
+      "title": "Nature - photo 4",
+      "url": "https://picsum.photos/seed/64/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/64/150/150"
+    },
+    {
+      "albumId": 3,
+      "id": 65,
+      "title": "Nature - photo 5",
+      "url": "https://picsum.photos/seed/65/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/65/150/150"
+    },
+    {
+      "albumId": 3,
+      "id": 66,
+      "title": "Nature - photo 6",
+      "url": "https://picsum.photos/seed/66/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/66/150/150"
+    },
+    {
+      "albumId": 3,
+      "id": 67,
+      "title": "Nature - photo 7",
+      "url": "https://picsum.photos/seed/67/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/67/150/150"
+    },
+    {
+      "albumId": 3,
+      "id": 68,
+      "title": "Nature - photo 8",
+      "url": "https://picsum.photos/seed/68/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/68/150/150"
+    },
+    {
+      "albumId": 3,
+      "id": 69,
+      "title": "Nature - photo 9",
+      "url": "https://picsum.photos/seed/69/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/69/150/150"
+    },
+    {
+      "albumId": 3,
+      "id": 70,
+      "title": "Nature - photo 10",
+      "url": "https://picsum.photos/seed/70/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/70/150/150"
+    },
+    {
+      "albumId": 3,
+      "id": 71,
+      "title": "Nature - photo 11",
+      "url": "https://picsum.photos/seed/71/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/71/150/150"
+    },
+    {
+      "albumId": 3,
+      "id": 72,
+      "title": "Nature - photo 12",
+      "url": "https://picsum.photos/seed/72/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/72/150/150"
+    },
+    {
+      "albumId": 4,
+      "id": 73,
+      "title": "Food - photo 1",
+      "url": "https://picsum.photos/seed/73/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/73/150/150"
+    },
+    {
+      "albumId": 4,
+      "id": 74,
+      "title": "Food - photo 2",
+      "url": "https://picsum.photos/seed/74/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/74/150/150"
+    },
+    {
+      "albumId": 4,
+      "id": 75,
+      "title": "Food - photo 3",
+      "url": "https://picsum.photos/seed/75/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/75/150/150"
+    },
+    {
+      "albumId": 4,
+      "id": 76,
+      "title": "Food - photo 4",
+      "url": "https://picsum.photos/seed/76/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/76/150/150"
+    },
+    {
+      "albumId": 4,
+      "id": 77,
+      "title": "Food - photo 5",
+      "url": "https://picsum.photos/seed/77/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/77/150/150"
+    },
+    {
+      "albumId": 4,
+      "id": 78,
+      "title": "Food - photo 6",
+      "url": "https://picsum.photos/seed/78/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/78/150/150"
+    },
+    {
+      "albumId": 4,
+      "id": 79,
+      "title": "Food - photo 7",
+      "url": "https://picsum.photos/seed/79/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/79/150/150"
+    },
+    {
+      "albumId": 4,
+      "id": 80,
+      "title": "Food - photo 8",
+      "url": "https://picsum.photos/seed/80/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/80/150/150"
+    },
+    {
+      "albumId": 4,
+      "id": 81,
+      "title": "Food - photo 9",
+      "url": "https://picsum.photos/seed/81/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/81/150/150"
+    },
+    {
+      "albumId": 4,
+      "id": 82,
+      "title": "Food - photo 10",
+      "url": "https://picsum.photos/seed/82/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/82/150/150"
+    },
+    {
+      "albumId": 4,
+      "id": 83,
+      "title": "Food - photo 11",
+      "url": "https://picsum.photos/seed/83/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/83/150/150"
+    },
+    {
+      "albumId": 4,
+      "id": 84,
+      "title": "Food - photo 12",
+      "url": "https://picsum.photos/seed/84/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/84/150/150"
+    },
+    {
+      "albumId": 5,
+      "id": 85,
+      "title": "City life - photo 1",
+      "url": "https://picsum.photos/seed/85/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/85/150/150"
+    },
+    {
+      "albumId": 5,
+      "id": 86,
+      "title": "City life - photo 2",
+      "url": "https://picsum.photos/seed/86/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/86/150/150"
+    },
+    {
+      "albumId": 5,
+      "id": 87,
+      "title": "City life - photo 3",
+      "url": "https://picsum.photos/seed/87/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/87/150/150"
+    },
+    {
+      "albumId": 5,
+      "id": 88,
+      "title": "City life - photo 4",
+      "url": "https://picsum.photos/seed/88/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/88/150/150"
+    },
+    {
+      "albumId": 5,
+      "id": 89,
+      "title": "City life - photo 5",
+      "url": "https://picsum.photos/seed/89/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/89/150/150"
+    },
+    {
+      "albumId": 5,
+      "id": 90,
+      "title": "City life - photo 6",
+      "url": "https://picsum.photos/seed/90/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/90/150/150"
+    },
+    {
+      "albumId": 5,
+      "id": 91,
+      "title": "City life - photo 7",
+      "url": "https://picsum.photos/seed/91/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/91/150/150"
+    },
+    {
+      "albumId": 5,
+      "id": 92,
+      "title": "City life - photo 8",
+      "url": "https://picsum.photos/seed/92/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/92/150/150"
+    },
+    {
+      "albumId": 5,
+      "id": 93,
+      "title": "City life - photo 9",
+      "url": "https://picsum.photos/seed/93/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/93/150/150"
+    },
+    {
+      "albumId": 5,
+      "id": 94,
+      "title": "City life - photo 10",
+      "url": "https://picsum.photos/seed/94/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/94/150/150"
+    },
+    {
+      "albumId": 5,
+      "id": 95,
+      "title": "City life - photo 11",
+      "url": "https://picsum.photos/seed/95/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/95/150/150"
+    },
+    {
+      "albumId": 5,
+      "id": 96,
+      "title": "City life - photo 12",
+      "url": "https://picsum.photos/seed/96/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/96/150/150"
+    },
+    {
+      "albumId": 6,
+      "id": 97,
+      "title": "Flowers - photo 1",
+      "url": "https://picsum.photos/seed/97/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/97/150/150"
+    },
+    {
+      "albumId": 6,
+      "id": 98,
+      "title": "Flowers - photo 2",
+      "url": "https://picsum.photos/seed/98/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/98/150/150"
+    },
+    {
+      "albumId": 6,
+      "id": 99,
+      "title": "Flowers - photo 3",
+      "url": "https://picsum.photos/seed/99/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/99/150/150"
+    },
+    {
+      "albumId": 6,
+      "id": 100,
+      "title": "Flowers - photo 4",
+      "url": "https://picsum.photos/seed/100/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/100/150/150"
+    },
+    {
+      "albumId": 6,
+      "id": 101,
+      "title": "Flowers - photo 5",
+      "url": "https://picsum.photos/seed/101/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/101/150/150"
+    },
+    {
+      "albumId": 6,
+      "id": 102,
+      "title": "Flowers - photo 6",
+      "url": "https://picsum.photos/seed/102/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/102/150/150"
+    },
+    {
+      "albumId": 6,
+      "id": 103,
+      "title": "Flowers - photo 7",
+      "url": "https://picsum.photos/seed/103/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/103/150/150"
+    },
+    {
+      "albumId": 6,
+      "id": 104,
+      "title": "Flowers - photo 8",
+      "url": "https://picsum.photos/seed/104/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/104/150/150"
+    },
+    {
+      "albumId": 6,
+      "id": 105,
+      "title": "Flowers - photo 9",
+      "url": "https://picsum.photos/seed/105/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/105/150/150"
+    },
+    {
+      "albumId": 6,
+      "id": 106,
+      "title": "Flowers - photo 10",
+      "url": "https://picsum.photos/seed/106/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/106/150/150"
+    },
+    {
+      "albumId": 6,
+      "id": 107,
+      "title": "Flowers - photo 11",
+      "url": "https://picsum.photos/seed/107/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/107/150/150"
+    },
+    {
+      "albumId": 6,
+      "id": 108,
+      "title": "Flowers - photo 12",
+      "url": "https://picsum.photos/seed/108/600/400",
+      "thumbnailUrl": "https://picsum.photos/seed/108/150/150"
+    }
+  ]
+}

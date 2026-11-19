@@ -1,0 +1,38 @@
+import { Routes, Route, Navigate } from 'react-router-dom';
+import Login from './pages/Login/Login';
+import Register from './pages/Register/Register';
+import RegisterDetails from './pages/RegisterDetails/RegisterDetails';
+import UserLayout from './pages/UserLayout/UserLayout';
+import Todos from './pages/Todos/Todos';
+import Posts from './pages/Posts/Posts';
+import Albums from './pages/Albums/Albums';
+import Photos from './pages/Photos/Photos';
+import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
+
+function App() {
+
+  return (
+    <Routes>
+      <Route path="/" element={<Navigate to="/login" replace />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/register/details" element={<RegisterDetails />} />
+
+      <Route
+        path="/:username"
+        element={
+          <ProtectedRoute>
+            <UserLayout />
+          </ProtectedRoute>
+        }
+      >
+        <Route path="todos" element={<Todos />} />
+        <Route path="posts" element={<Posts />} />
+        <Route path="albums" element={<Albums />} />
+        <Route path="albums/:albumId/photos" element={<Photos />} />
+      </Route>
+    </Routes>
+  );
+}
+
+export default App
