@@ -1,10 +1,11 @@
+import { useNavigate, Link } from 'react-router-dom';
 import { useForm } from '../../hooks/useForm';
 import { useUser } from '../../hooks/useUser';
 import { getItems } from '../../api/api';
 
 function Login() {
-  const { values, handleChange, errorMessage, setErrorMessage } = useForm({
-    email: '',
+  const { values, setValues, handleChange, errorMessage, setErrorMessage } = useForm({
+    username: '',
     password: '',
   });
   const { login } = useUser();
@@ -14,18 +15,21 @@ function Login() {
     event.preventDefault();
 
     try {
-      const users = await getItems('users', { email: values.email.trim() });
+      const users = await getItems('users', { username: values.username.trim() });
       const foundUser = users[0];
 
       if (!foundUser || foundUser.password !== values.password) {
-        setErrorMessage('אימייל או סיסמה שגויים');
+        setErrorMessage('שם משתמש או סיסמה שגויים');
+        setValues({ ...values, password: '' });
         return;
       }
 
-      login(foundUser);
+      const { password, ...userWithoutPassword } = foundUser;
+      login(userWithoutPassword);
       navigate(`/${foundUser.username}`, { replace: true });
     } catch (error) {
       setErrorMessage(error.message);
+      setValues({ ...values, password: '' });
     }
   };
 
@@ -34,12 +38,11 @@ function Login() {
       <h2>כניסה</h2>
 
       <input
-        name="email"
-        type="email"
-        value={values.email}
+        name="username"
+        value={values.username}
         onChange={handleChange}
-        placeholder="אימייל"
-        autoComplete="email"
+        placeholder="שם משתמש"
+        autoComplete="username"
         required
       />
       <input
@@ -48,12 +51,17 @@ function Login() {
         value={values.password}
         onChange={handleChange}
         placeholder="סיסמה"
+        autoComplete="current-password"
         required
       />
 
       <button type="submit">התחברות</button>
 
       {errorMessage && <p>{errorMessage}</p>}
+
+      <p>
+        אין לך חשבון? <Link to="/register">להרשמה</Link>
+      </p>
     </form>
   );
 }

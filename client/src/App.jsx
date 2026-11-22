@@ -1,7 +1,7 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
-import Login from './pages/Login/Login';
-import Register from './pages/Register/Register';
-import RegisterDetails from './pages/RegisterDetails/RegisterDetails';
+import Login from './pages/auth/Login';
+import Register from './pages/auth/Register';
+import RegisterDetails from './pages/auth/RegisterDetails';
 import UserLayout from './pages/UserLayout/UserLayout';
 import Todos from './pages/Todos/Todos';
 import Posts from './pages/Posts/Posts';
@@ -12,7 +12,7 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 function App() {
 
   return (
-    <Routes>
+   
       <Routes>
       <Route path="/" element={<Navigate to="/login" replace />} />
       <Route path="/login" element={<Login />} />

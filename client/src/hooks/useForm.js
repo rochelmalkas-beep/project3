@@ -8,5 +8,8 @@ export function useForm(initialValues) {
     setValues({ ...values, [event.target.name]: event.target.value });
   };
 
-  return { values, handleChange, errorMessage, setErrorMessage };
+    const resetForm = () => {
+    setValues(initialValues);
+  };
+  return { values, setValues, handleChange, resetForm, errorMessage, setErrorMessage};
 }
