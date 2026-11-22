@@ -13,6 +13,7 @@ function App() {
 
   return (
     <Routes>
+      <Routes>
       <Route path="/" element={<Navigate to="/login" replace />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
@@ -32,7 +33,7 @@ function App() {
         <Route path="albums/:albumId/photos" element={<Photos />} />
       </Route>
     </Routes>
-  );
+    );
 }
 
 export default App

@@ -1,7 +1,10 @@
 import { useForm } from '../../hooks/useForm';
+import { useUser } from '../../context/UserContext';
+import { getItems } from '../../api/api';
+
 function Login() {
   const { values, handleChange, errorMessage, setErrorMessage } = useForm({
-    username: '',
+    email: '',
     password: '',
   });
   const { login } = useUser();
@@ -11,11 +14,11 @@ function Login() {
     event.preventDefault();
 
     try {
-      const users = await getItems('users', { username: values.username });
+      const users = await getItems('users', { email: values.email.trim() });
       const foundUser = users[0];
 
       if (!foundUser || foundUser.password !== values.password) {
-        setErrorMessage('שם משתמש או סיסמה שגויים');
+        setErrorMessage('אימייל או סיסמה שגויים');
         return;
       }
 
@@ -31,10 +34,12 @@ function Login() {
       <h2>כניסה</h2>
 
       <input
-        name="username"
-        value={values.username}
+        name="email"
+        type="email"
+        value={values.email}
         onChange={handleChange}
-        placeholder="שם משתמש"
+        placeholder="אימייל"
+        autoComplete="email"
         required
       />
       <input
@@ -52,3 +57,5 @@ function Login() {
     </form>
   );
 }
+
+export default Login;
