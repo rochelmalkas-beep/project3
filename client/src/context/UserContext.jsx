@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from 'react';
 
-const UserContext = createContext();
+export const UserContext = createContext();
 
 export function UserProvider({ children }) {
   const [user, setUser] = useState(() => JSON.parse(localStorage.getItem('user')));
@@ -22,6 +22,3 @@ export function UserProvider({ children }) {
   );
 }
 
-export function useUser() {
-  return useContext(UserContext);
-}
