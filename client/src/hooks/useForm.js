@@ -4,12 +4,18 @@ export function useForm(initialValues) {
   const [values, setValues] = useState(initialValues);
   const [errorMessage, setErrorMessage] = useState('');
 
-  const handleChange = (event) => {
-    setValues({ ...values, [event.target.name]: event.target.value });
+  const setValue = (name, value) => {
+    setValues((prev) => ({ ...prev, [name]: value }));
   };
 
-    const resetForm = () => {
-    setValues(initialValues);
+  const handleChange = (event) => {
+    setValue(event.target.name, event.target.value);
   };
-  return { values, setValues, handleChange, resetForm, errorMessage, setErrorMessage};
+
+  const resetForm = () => {
+    setValues(initialValues);
+    setErrorMessage('');
+  };
+
+  return { values, setValues, setValue, handleChange, resetForm, errorMessage, setErrorMessage };
 }

@@ -1,5 +1,5 @@
-import { useParams } from "react-router-dom";
 import { useUser } from "../../hooks/useUser";
+import { Navigate,useParams } from 'react-router-dom';
 function ProtectedRoute({ children }) {
   const { user } = useUser();
   const { username } = useParams();
