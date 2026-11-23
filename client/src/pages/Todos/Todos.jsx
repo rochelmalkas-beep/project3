@@ -2,7 +2,6 @@ import ItemList from '../../components/ItemList/ItemList';
 
 const createNewTodo = (userId, title) => ({
   userId,
-  id: crypto.randomUUID(),
   title,
   completed: false,
 });
