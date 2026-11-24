@@ -15,6 +15,10 @@ function ItemList({
   sortOptions = [],
   createNewItem,
   renderExtras,
+  collapsible = false,
+  canEdit = true,
+  canDelete = true,
+  newItemFields = { title: '' },
   noMoreMessage = 'אין עוד פריטים',
 }) {
   const { user } = useUser();
@@ -26,7 +30,7 @@ function ItemList({
     setSearchText, setSortField, changeSearchField, visibleItems,
   } = useSearchAndSort(items, searchOptions);
 
-  const handleAdd = (newTitle) => addNewItem(createNewItem(user.id, newTitle));
+  const handleAdd = (newValues) => addNewItem(createNewItem(user.id, newValues));
 
   return (
     <div>
@@ -46,7 +50,7 @@ function ItemList({
         <SelectField value={sortField} onChange={setSortField} options={sortOptions} emptyLabel="ללא מיון" />
       )}
 
-      <AddItemForm onAdd={handleAdd} />
+      <AddItemForm onAdd={handleAdd} initialValues={newItemFields} />
 
       {isLoading && <p>טוען...</p>}
       {error && <p>{error}</p>}
@@ -56,7 +60,10 @@ function ItemList({
         <ItemRow
           key={item.id}
           item={item}
-          onUpdateTitle={(newTitle) => updateExistingItem(item.id, { title: newTitle })}
+          collapsible={collapsible}
+          canEdit={typeof canEdit === 'function' ? canEdit(item) : canEdit}
+          canDelete={typeof canDelete === 'function' ? canDelete(item) : canDelete}
+          onUpdate={(changes) => updateExistingItem(item.id, changes)}
           onDelete={() => removeItem(item.id)}
         >
           {renderExtras && renderExtras(item, updateExistingItem)}

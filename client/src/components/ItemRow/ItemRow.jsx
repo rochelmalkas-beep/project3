@@ -1,24 +1,38 @@
 import { useState } from 'react';
 
-function ItemRow({ item, onUpdateTitle, onDelete, children }) {
+const isNonEmptyString = (value) => typeof value === 'string' && value.trim() !== '';
+
+function ItemRow({ item, onUpdate, onDelete, collapsible = false, canEdit = true, canDelete = true, children }) {
     const [isEditing, setIsEditing] = useState(false);
-    const [draftTitle, setDraftTitle] = useState(item.title);
+    const [draftFields, setDraftFields] = useState({});
+    const [isExpanded, setIsExpanded] = useState(false);
+
+    const editableFields = ['title', 'body','url'].filter((field) => isNonEmptyString(item[field]));
 
     const startEditing = () => {
-        setDraftTitle(item.title);
+        setDraftFields(Object.fromEntries(editableFields.map((field) => [field, item[field]])));
         setIsEditing(true);
     };
 
     const cancelEditing = () => setIsEditing(false);
 
-    const saveTitle = async () => {
-        const trimmedTitle = draftTitle.trim();
-        if (!trimmedTitle || trimmedTitle === item.title) {
-            setIsEditing(false);
-            return;
+    const handleFieldChange = (field) => (event) => {
+        setDraftFields((previous) => ({ ...previous, [field]: event.target.value }));
+    };
+
+    const saveFields = async () => {
+        const changes = {};
+
+        for (const field of editableFields) {
+            const newValue = draftFields[field].trim();
+            if (!newValue) return; // לא שומרים שדה ריק (כותרת חובה)
+            if (newValue !== item[field]) changes[field] = newValue;
         }
-        await onUpdateTitle(trimmedTitle);
+
         setIsEditing(false);
+        if (Object.keys(changes).length > 0) {
+            await onUpdate(changes);
+        }
     };
 
     const handleDeleteClick = () => {
@@ -29,23 +43,39 @@ function ItemRow({ item, onUpdateTitle, onDelete, children }) {
 
     return (
         <div>
-            {children}
+            {children && collapsible && (
+                <button onClick={() => setIsExpanded((open) => !open)}>
+                    {isExpanded ? 'הסתר' : 'הצג'}
+                </button>
+            )}
+            {children && (!collapsible || isExpanded) && children}
             <h2>{item.id}</h2>
             {isEditing ? (
                 <>
-                    <input
-                        value={draftTitle}
-                        onChange={(event) => setDraftTitle(event.target.value)}
-                        autoFocus
-                    />
-                    <button onClick={saveTitle}>שמירה</button>
+                    {editableFields.map((field) =>
+                        field === 'body' ? (
+                            <textarea
+                                key={field}
+                                value={draftFields[field]}
+                                onChange={handleFieldChange(field)}
+                            />
+                        ) : (
+                            <input
+                                key={field}
+                                value={draftFields[field]}
+                                onChange={handleFieldChange(field)}
+                                autoFocus
+                            />
+                        )
+                    )}
+                    <button onClick={saveFields}>שמירה</button>
                     <button onClick={cancelEditing}>ביטול</button>
                 </>
             ) : (
                 <>
                     <span>{item.title}</span>
-                    <button onClick={startEditing}>עריכה</button>
-                    <button onClick={handleDeleteClick}>מחיקה</button>
+                    {canEdit && <button onClick={startEditing}>עריכה</button>}
+                    {canDelete && <button onClick={handleDeleteClick}>מחיקה</button>}
                 </>
             )}
         </div>

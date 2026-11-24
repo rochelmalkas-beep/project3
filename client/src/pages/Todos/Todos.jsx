@@ -1,6 +1,6 @@
 import ItemList from '../../components/ItemList/ItemList';
 
-const createNewTodo = (userId, title) => ({
+const createNewTodo = (userId, { title }) => ({
   userId,
   title,
   completed: false,
