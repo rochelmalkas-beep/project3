@@ -1,3 +1,4 @@
+
 .posts-page {
   display: flex;
   flex-direction: column;
@@ -6,5 +7,67 @@
 
 .posts-page__header {
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
+}
+
+/* כרטיסי פוסטים */
+.posts-page .item-row {
+  padding: 22px 25px;
+  background: linear-gradient(115deg, #263b46, #20313b);
+  border: 1px solid #405762;
+  border-right: 5px solid #ff795f;
+  border-radius: 6px 25px 6px 25px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
+}
+
+.posts-page .item-row:hover {
+  border-color: #ff795f;
+  border-right-color: #c6f36a;
+  transform: translateY(-3px);
+  box-shadow: 0 13px 28px rgba(0, 0, 0, 0.25);
+}
+
+.posts-page .item-row__title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #f1f7f4;
+}
+
+.posts-page .item-row__id {
+  background: rgba(255, 121, 95, 0.14);
+  color: #ff9b83;
+}
+
+.posts-page .item-row__extras {
+  margin-top: 10px;
+  padding-top: 18px;
+  border-top: 1px solid #405762;
+}
+
+
+/* POSTS – כרטיסי מגזין */
+.item-row:has(.post-extras) {
+  padding: 22px 25px;
+  background: linear-gradient(125deg, #263642, #1d2c37);
+  border: 1px solid #405762;
+  border-radius: 5px 24px 5px 24px;
+  border-right: 5px solid #ff795f;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2);
+}
+
+.item-row:has(.post-extras):hover {
+  border-color: #ff795f;
+  border-right-color: #c6f36a;
+  transform: translateY(-3px);
+}
+
+.item-row:has(.post-extras) .item-row__title {
+  color: #f4f2eb;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.item-row:has(.post-extras) .item-row__id {
+  background: rgba(255, 121, 95, 0.15);
+  color: #ff9b83;
 }

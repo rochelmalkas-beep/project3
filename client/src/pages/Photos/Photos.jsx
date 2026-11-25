@@ -25,6 +25,10 @@ function Photos() {
       title={albumTitle}
       params={{ albumId }}
       pageSize={10}
+      defaultOpen
+      alwaysOpen
+      showId={false}
+      layout="row"
       renderExtras={rederExtrasPhotos}
       createNewItem={createNewPhoto}
       newItemFields={{ title: '', url: '' }}

@@ -18,11 +18,17 @@ function ItemList({
   createNewItem,
   renderExtras,
   isItemSelected: checkSelection,
-  collapsible = false,
   canEdit = true,
   canDelete = true,
   newItemFields = { title: '' },
   noMoreMessage = 'אין עוד פריטים',
+  titleField = 'title',
+  itemTitleField = titleField,
+  requiredField = 'title',
+  defaultOpen = false,
+  alwaysOpen = false,
+  showId = true,
+  layout = 'column',
 }) {
   const { user } = useUser();
   const itemsParams = params || { userId: user.id };
@@ -40,7 +46,7 @@ function ItemList({
 
       <ListToolbar searchOptions={searchOptions} sortOptions={sortOptions} search={search} />
 
-      <AddItemForm onAdd={handleAdd} initialValues={newItemFields} />
+      <AddItemForm onAdd={handleAdd} initialValues={newItemFields} requiredField={requiredField} />
 
       <ItemListStatus
         isLoading={isLoading}
@@ -48,13 +54,17 @@ function ItemList({
         isEmpty={search.visibleItems.length === 0}
       />
 
-      <div className="item-list__items">
+      <div className={`item-list__items item-list__items--${layout}`}>
         {search.visibleItems.map((item) => (
           <ItemRow
             key={item.id}
             item={item}
-            collapsible={collapsible}
-            isSelected={isItemSelected(checkSelection, item)}
+            titleField={titleField}
+            itemTitleField={itemTitleField}
+            defaultOpen={defaultOpen}
+            alwaysOpen={alwaysOpen}
+            showId={showId}
+            isSelected={checkSelection ? isItemSelected(checkSelection, item) : true}
             canEdit={resolvePermission(canEdit, item)}
             canDelete={resolvePermission(canDelete, item)}
             onUpdate={(changes) => updateExistingItem(item.id, changes)}

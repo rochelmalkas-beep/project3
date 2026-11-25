@@ -7,14 +7,20 @@ function ItemRow({
     item,
     onUpdate,
     onDelete,
-    collapsible = false,
     isSelected = false,
     canEdit = true,
     canDelete = true,
+    titleField = 'title',
+    itemTitleField = titleField,
+    showId = true,
+    defaultOpen = false,
+    alwaysOpen = false,
     children,
 }) {
-    const editor = useItemEditor(item, onUpdate);
-    const [isExpanded, setIsExpanded] = useState(false);
+    const editor = useItemEditor(item, onUpdate, titleField, itemTitleField);
+    const [isExpanded, setIsExpanded] = useState(defaultOpen);
+
+    const isOpen = alwaysOpen || isExpanded;
 
     const handleDeleteClick = () => {
         if (window.confirm('למחוק את הפריט?')) {
@@ -24,18 +30,17 @@ function ItemRow({
 
     return (
         <div className={`item-row${isSelected ? ' item-row--selected' : ''}`}>
-            <div className="item-row__head">
-                <span className="item-row__id">#{item.id}</span>
-                <div className="item-row__actions">
-                    {children && collapsible && (
-                        <button className="btn btn-secondary btn-sm" onClick={() => setIsExpanded((open) => !open)}>
-                            {isExpanded ? 'הסתר' : 'הצג'}
-                        </button>
-                    )}
-                </div>
-            </div>
+            <button
+                type="button"
+                className="item-row__head"
+                aria-expanded={isOpen}
+                onClick={() => !alwaysOpen && setIsExpanded((open) => !open)}
+            >
+                {showId && <span className="item-row__id">#{item.id}</span>}
+                <span className="item-row__title">{item[itemTitleField]}</span>
+            </button>
 
-            {children && (!collapsible || isExpanded) && (
+            {children && isOpen && (
                 <div className="item-row__extras">{children}</div>
             )}
 
@@ -52,8 +57,8 @@ function ItemRow({
                     </div>
                 </div>
             ) : (
-                <div className="item-row__content">
-                    <span className="item-row__title">{item.title}</span>
+                // כפתורי עדכון/מחיקה מוצגים רק כשהפריט פתוח — כלומר במצב סקירה אין אותם
+                isOpen && (canEdit || canDelete) && (
                     <div className="item-row__actions">
                         {canEdit && (
                             <button className="btn btn-secondary btn-sm" onClick={editor.startEditing}>עריכה</button>
@@ -62,7 +67,7 @@ function ItemRow({
                             <button className="btn btn-danger btn-sm" onClick={handleDeleteClick}>מחיקה</button>
                         )}
                     </div>
-                </div>
+                )
             )}
         </div>
     );

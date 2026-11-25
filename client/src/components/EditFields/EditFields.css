@@ -1,5 +1,21 @@
+
 .edit-fields {
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
+  gap: 13px;
+  width: 100%;
+  padding: 17px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: rgba(238,236,228,.55);
+}
+
+.edit-fields .input,
+.edit-fields .textarea {
+  width: 100%;
+  background: var(--color-surface);
+}
+
+.edit-fields .textarea {
+  min-height: 110px;
 }

@@ -2,39 +2,22 @@ import { useState } from 'react';
 import Comments from '../Comments/Comments';
 import './PostExtras.css';
 
-function PostExtras({ post, isSelected, onToggle }) {
+// הנפתח/נסגר מתבצע בלחיצה על שורת הפריט (ה-head של ItemRow)
+function PostExtras({ post }) {
   const [showComments, setShowComments] = useState(false);
-
-  const handleToggle = () => {
-    setShowComments(false);
-    onToggle();
-  };
 
   return (
     <div className="post-extras">
+      <p className="post-extras__body">{post.body}</p>
       <div className="item-row__actions">
         <button
-          className={`btn btn-sm ${isSelected ? 'btn-secondary' : 'btn-primary'}`}
-          onClick={handleToggle}
+          className="btn btn-secondary btn-sm"
+          onClick={() => setShowComments((previous) => !previous)}
         >
-          {isSelected ? 'סגור' : 'בחר'}
+          {showComments ? 'הסתר תגובות' : 'הצג תגובות'}
         </button>
       </div>
-
-      {isSelected && (
-        <>
-          <p className="post-extras__body">{post.body}</p>
-          <div className="item-row__actions">
-            <button
-              className="btn btn-secondary btn-sm"
-              onClick={() => setShowComments((previous) => !previous)}
-            >
-              {showComments ? 'הסתר תגובות' : 'הצג תגובות'}
-            </button>
-          </div>
-          {showComments && <Comments postId={post.id} />}
-        </>
-      )}
+      {showComments && <Comments postId={post.id} />}
     </div>
   );
 }

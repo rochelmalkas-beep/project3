@@ -3,6 +3,7 @@ import './AddItemForm.css';
 
 const PLACEHOLDER_BY_FIELD = {
   title: 'כותרת חדשה',
+  name: 'כותרת התגובה',
   body: 'תוכן',
 };
 

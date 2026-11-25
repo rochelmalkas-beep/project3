@@ -1,4 +1,5 @@
-/* ---------- כפתורים ---------- */
+
+/* כפתורים */
 
 .btn {
   display: inline-flex;
@@ -7,14 +8,12 @@
   gap: var(--space-xs);
   padding: 10px 20px;
   border: 1px solid transparent;
-  border-radius: var(--radius-full);
+  border-radius: 12px;
   font-family: inherit;
   font-size: var(--font-size-sm);
-  font-weight: 700;
-  letter-spacing: 0.01em;
+  font-weight: 750;
   cursor: pointer;
-  transition: background var(--transition), color var(--transition),
-    border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+  transition: all var(--transition);
 }
 
 .btn:focus-visible {
@@ -23,46 +22,47 @@
 }
 
 .btn:disabled {
-  opacity: 0.45;
+  opacity: .45;
   cursor: not-allowed;
 }
 
 .btn:active:not(:disabled) {
-  transform: translateY(1px);
+  transform: scale(.97);
 }
 
 .btn-primary {
-  background: var(--color-primary-gradient);
-  color: #fff;
+  color: #102b30;
+  background: linear-gradient(120deg,#36e0ca,#15b9b3);
   box-shadow: var(--shadow-primary);
 }
 
 .btn-primary:hover:not(:disabled) {
-  box-shadow: 0 10px 26px rgba(79, 70, 229, 0.42);
-  filter: brightness(1.05);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(32,205,187,.3);
+  filter: brightness(1.08);
 }
 
 .btn-secondary {
-  background: var(--color-surface);
-  color: var(--color-text);
-  border-color: var(--color-border);
-  box-shadow: var(--shadow-xs);
+  background: #304651;
+  color: #e7f1ef;
+  border-color: #48616b;
 }
 
 .btn-secondary:hover:not(:disabled) {
-  background: var(--color-surface-2);
-  border-color: #cfd4e4;
+  background: #3b5661;
+  border-color: #20cdbb;
+  color: #fff;
 }
 
 .btn-danger {
-  background: var(--color-danger-soft);
-  color: var(--color-danger);
+  background: rgba(255,107,112,.13);
+  color: #ff8588;
+  border-color: rgba(255,107,112,.2);
 }
 
 .btn-danger:hover:not(:disabled) {
-  background: var(--color-danger);
+  background: #e34b55;
   color: #fff;
-  box-shadow: 0 8px 18px rgba(225, 29, 72, 0.28);
 }
 
 .btn-sm {
@@ -74,38 +74,37 @@
   width: 34px;
   height: 34px;
   padding: 0;
-  border-radius: var(--radius-full);
-  font-size: 1rem;
-  line-height: 1;
+  border-radius: 11px;
 }
 
-/* ---------- שדות קלט ---------- */
+/* שדות */
 
 .input,
 .textarea,
 .select {
   width: 100%;
   padding: 11px 16px;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  background: var(--color-surface);
-  color: var(--color-text);
+  border: 1px solid #405965;
+  border-radius: 12px;
+  background: #1d2e38;
+  color: #edf5f3;
   font-family: inherit;
   font-size: var(--font-size-base);
-  transition: border-color var(--transition), box-shadow var(--transition);
+  transition: all var(--transition);
 }
 
 .input::placeholder,
 .textarea::placeholder {
-  color: #9aa1b4;
+  color: #8ba1a8;
 }
 
 .input:focus,
 .textarea:focus,
 .select:focus {
   outline: none;
-  border-color: var(--color-primary);
-  box-shadow: 0 0 0 4px var(--color-primary-soft);
+  border-color: #20cdbb;
+  background: #203842;
+  box-shadow: 0 0 0 3px rgba(32,205,187,.13);
 }
 
 .textarea {
@@ -116,20 +115,22 @@
 
 .select {
   cursor: pointer;
+  color-scheme: dark;
   appearance: none;
-  background-image: linear-gradient(45deg, transparent 50%, var(--color-text-muted) 50%),
-    linear-gradient(135deg, var(--color-text-muted) 50%, transparent 50%);
-  background-position: calc(0% + 18px) 55%, calc(0% + 23px) 55%;
+  background-image:
+    linear-gradient(45deg,transparent 50%,#20cdbb 50%),
+    linear-gradient(135deg,#20cdbb 50%,transparent 50%);
+  background-position: calc(0% + 18px) 55%,calc(0% + 23px) 55%;
   background-size: 6px 6px;
   background-repeat: no-repeat;
   padding-left: 40px;
 }
 
-/* ---------- הודעות ---------- */
+/* הודעות */
 
 .error-message {
   margin: 0;
-  color: var(--color-danger);
+  color: #ff8588;
   font-size: var(--font-size-sm);
   font-weight: 600;
 }
@@ -140,7 +141,7 @@
   font-size: var(--font-size-sm);
 }
 
-/* ---------- כותרת עמוד עם קו הדגשה ---------- */
+/* כותרות */
 
 .section-title {
   position: relative;
@@ -155,6 +156,6 @@
   top: 15%;
   bottom: 15%;
   width: 4px;
-  border-radius: var(--radius-full);
-  background: var(--color-primary-gradient);
+  border-radius: 20px;
+  background: linear-gradient(180deg,#20cdbb,#ff795f);
 }

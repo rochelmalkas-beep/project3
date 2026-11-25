@@ -29,7 +29,6 @@ function Albums() {
       searchOptions={searchOptions}
       createNewItem={createNewAlbum}
       renderExtras={renderExtrasAlbum}
-      collapsible
     />)
 }
 

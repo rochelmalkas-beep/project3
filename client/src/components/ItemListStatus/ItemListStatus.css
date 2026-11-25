@@ -1,17 +1,27 @@
+
 .item-list-status {
-  padding: var(--space-md) var(--space-lg);
-  border-radius: var(--radius-md);
+  padding: 16px 22px;
+  margin: 12px 0;
+  border-radius: 6px 18px 6px 18px;
   text-align: center;
-  font-size: var(--font-size-sm);
+  font-size: 0.9rem;
   font-weight: 600;
-  color: var(--color-text-muted);
-  background: var(--color-surface);
-  border: 1px dashed var(--color-border);
+
+  color: #dcebe8;
+  background: linear-gradient(120deg, #263b46, #20323c);
+  border: 1px solid #405762;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16);
 }
 
+/* מצב שגיאה */
 .item-list-status--error {
-  color: var(--color-danger);
-  background: var(--color-danger-soft);
-  border-color: transparent;
-  border-style: solid;
+  color: #ff9b83;
+  background: linear-gradient(120deg, #382c32, #302830);
+  border: 1px solid #8d514d;
+  border-right: 4px solid #ff795f;
+}
+
+/* מצב טעינה */
+p.item-list-status:not(.item-list-status--error) {
+  border-right: 4px solid #20cdbb;
 }

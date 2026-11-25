@@ -1,49 +1,55 @@
+
 :root {
-  /* ---------- צבעים ---------- */
-  --color-bg: #f6f7fb;
-  --color-bg-gradient: radial-gradient(circle at 15% 0%, #e9ebff 0%, transparent 45%),
-    radial-gradient(circle at 90% 10%, #e0f2fe 0%, transparent 40%);
-  --color-surface: #ffffff;
-  --color-surface-2: #f1f3f9;
-  --color-text: #161a2b;
-  --color-text-muted: #6b7280;
-  --color-border: #e2e5ef;
+  /* צבעי בסיס */
+  --color-bg: #18232d;
+  --color-bg-gradient:
+    radial-gradient(ellipse at 10% 0%, rgba(32,205,187,.13), transparent 40%),
+    radial-gradient(ellipse at 95% 75%, rgba(255,121,95,.09), transparent 38%);
 
-  --color-primary: #5b5bd6;
-  --color-primary-hover: #4a48c8;
-  --color-primary-dark: #3730b8;
-  --color-primary-soft: rgba(91, 91, 214, 0.1);
-  --color-primary-gradient: linear-gradient(135deg, #6d5dfc 0%, #4f46e5 55%, #3730c4 100%);
+  --color-surface: #243642;
+  --color-surface-2: #2c414d;
+  --color-text: #edf5f3;
+  --color-text-muted: #a6b9bd;
+  --color-border: #3a505b;
 
-  --color-accent: #0ea5e9;
-  --color-accent-soft: rgba(14, 165, 233, 0.12);
-  --color-success: #10b981;
+  /* טורקיז */
+  --color-primary: #20cdbb;
+  --color-primary-hover: #42e0cf;
+  --color-primary-dark: #119b91;
+  --color-primary-soft: rgba(32,205,187,.14);
+  --color-primary-gradient: linear-gradient(120deg,#20cdbb,#119caa);
 
-  --color-danger: #e11d48;
-  --color-danger-hover: #be123c;
-  --color-danger-soft: rgba(225, 29, 72, 0.1);
+  /* צבעי משנה */
+  --color-accent: #ff795f;
+  --color-accent-soft: rgba(255,121,95,.15);
+  --color-success: #59d6a1;
 
-  --color-selected: #f5f3ff;
-  --color-selected-border: #6d5dfc;
-  --color-selected-glow: rgba(109, 93, 252, 0.22);
+  --color-danger: #ff6b70;
+  --color-danger-hover: #e34b55;
+  --color-danger-soft: rgba(255,107,112,.14);
 
-  /* ---------- צורות ---------- */
-  --radius-xs: 4px;
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 18px;
-  --radius-xl: 24px;
+  --color-selected: #294c54;
+  --color-selected-border: #20cdbb;
+  --color-selected-glow: rgba(32,205,187,.19);
+
+  /* פינות */
+  --radius-xs: 5px;
+  --radius-sm: 10px;
+  --radius-md: 15px;
+  --radius-lg: 20px;
+  --radius-xl: 27px;
   --radius-full: 999px;
 
-  /* ---------- צללים ---------- */
-  --shadow-xs: 0 1px 2px rgba(22, 26, 43, 0.05);
-  --shadow-sm: 0 2px 6px rgba(22, 26, 43, 0.06);
-  --shadow-md: 0 8px 20px rgba(22, 26, 43, 0.08);
-  --shadow-lg: 0 18px 44px rgba(22, 26, 43, 0.14);
-  --shadow-primary: 0 8px 20px rgba(79, 70, 229, 0.32);
-  --shadow-selected: 0 0 0 3px var(--color-selected-glow), 0 10px 28px rgba(79, 70, 229, 0.14);
+  /* צללים */
+  --shadow-xs: 0 2px 8px rgba(0,0,0,.13);
+  --shadow-sm: 0 5px 15px rgba(0,0,0,.16);
+  --shadow-md: 0 10px 25px rgba(0,0,0,.22);
+  --shadow-lg: 0 20px 45px rgba(0,0,0,.3);
+  --shadow-primary: 0 8px 22px rgba(32,205,187,.2);
+  --shadow-selected: 0 0 0 3px var(--color-selected-glow), 0 10px 25px rgba(0,0,0,.2);
+  --shadow-card: 0 5px 18px rgba(0,0,0,.17);
 
-  /* ---------- ריווח ---------- */
+  /* ריווח */
   --space-xs: 4px;
   --space-sm: 8px;
   --space-md: 16px;
@@ -51,15 +57,14 @@
   --space-xl: 32px;
   --space-2xl: 48px;
 
-  /* ---------- גופנים ---------- */
-  --font-sans: 'Segoe UI', 'Rubik', 'Assistant', system-ui, -apple-system, sans-serif;
-  --font-size-xs: 0.75rem;
-  --font-size-sm: 0.875rem;
+  /* טיפוגרפיה */
+  --font-sans: 'Segoe UI','Rubik','Assistant',system-ui,-apple-system,sans-serif;
+  --font-size-xs: .75rem;
+  --font-size-sm: .875rem;
   --font-size-base: 1rem;
   --font-size-lg: 1.125rem;
   --font-size-xl: 1.5rem;
   --font-size-2xl: 2rem;
 
-  /* ---------- אנימציה ---------- */
-  --transition: 0.18s ease;
+  --transition: .22s ease;
 }

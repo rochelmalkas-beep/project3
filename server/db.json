@@ -186,7 +186,7 @@
       "userId": 1,
       "id": 7,
       "title": "Fix CSS of the header",
-      "completed": true
+      "completed": false
     },
     {
       "userId": 1,
@@ -783,6 +783,14 @@
       "name": "שגדכשדגכ",
       "body": "שדגכשדגכשדגכ",
       "id": 42
+    },
+    {
+      "postId": 2,
+      "userId": 1,
+      "email": "Sincere@april.biz",
+      "name": "כיגשדיכןושדג",
+      "body": "ידגחשכםד",
+      "id": 43
     }
   ],
   "albums": [
@@ -1593,18 +1601,6 @@
       "title": "Flowers - photo 12",
       "url": "https://picsum.photos/seed/108/600/400",
       "thumbnailUrl": "https://picsum.photos/seed/108/150/150"
-    },
-    {
-      "title": "wow",
-      "albumId": 1,
-      "id": 109
-    },
-    {
-      "title": "asdf",
-      "albumId": 1,
-      "url": "adsfasdfasdf",
-      "thumbnailUrl": "adsfasdfasdf",
-      "id": 110
     },
     {
       "title": "adsf",

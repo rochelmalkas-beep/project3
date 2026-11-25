@@ -1,18 +1,82 @@
+
 .album-link {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-xs);
-  padding: 6px 14px;
-  border-radius: var(--radius-full);
+  justify-content: center;
+  gap: 9px;
+  padding: 11px 20px;
+  border: 1px solid rgba(231,111,81,.2);
+  border-radius: 13px;
   background: var(--color-primary-soft);
-  color: var(--color-primary);
-  font-weight: 700;
+  color: var(--color-primary-dark);
   font-size: var(--font-size-sm);
-  transition: background var(--transition), color var(--transition), box-shadow var(--transition);
+  font-weight: 800;
+  transition: all var(--transition);
+}
+
+.album-link::after {
+  content: '←';
+  transition: transform var(--transition);
 }
 
 .album-link:hover {
   background: var(--color-primary-gradient);
-  color: #fff;
+  color: white;
+  border-color: transparent;
   box-shadow: var(--shadow-primary);
+  transform: translateY(-2px);
+}
+
+.album-link:hover::after {
+  transform: translateX(-4px);
+}
+
+
+/* ALBUMS – כרטיסי אוסף */
+.item-row:has(.album-link) {
+  padding: 22px;
+  background: linear-gradient(135deg, #263f43, #1e333a);
+  border: 1px solid #52706a;
+  border-radius: 22px 6px 22px 6px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.item-row:has(.album-link)::before {
+  background: #c6f36a;
+  width: 5px;
+}
+
+.item-row:has(.album-link) .item-row__title {
+  color: #c6f36a;
+  font-size: 1.2rem;
+  letter-spacing: 0.02em;
+}
+
+.item-row:has(.album-link) .album-link {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 14px 18px;
+  background: #172b31;
+  border: 1px solid #49665f;
+  border-radius: 12px 4px 12px 4px;
+  color: #e5f4d0;
+}
+
+.item-row:has(.album-link) .album-link::before {
+  content: '▤';
+  color: #c6f36a;
+  font-size: 20px;
+}
+
+.item-row:has(.album-link) .album-link::after {
+  content: '↗';
+  color: #20cdbb;
+  font-size: 18px;
+}
+
+.item-row:has(.album-link) .album-link:hover {
+  background: #304c4b;
+  border-color: #c6f36a;
+  transform: translateX(-3px);
 }

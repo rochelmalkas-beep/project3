@@ -4,15 +4,25 @@ const EDITABLE_FIELDS = ['title', 'body', 'url'];
 
 const isNonEmptyString = (value) => typeof value === 'string' && value.trim() !== '';
 
-export function useItemEditor(item, onUpdate) {
+/**
+ * titleField - שם השדה בטופס העריכה (ברירת מחדל 'title')
+ * itemTitleField - שם השדה בפריט עצמו, אם שונה (לתגובות: name)
+ */
+export function useItemEditor(item, onUpdate, titleField = 'title', itemTitleField = titleField) {
     const [isEditing, setIsEditing] = useState(false);
     const [draftFields, setDraftFields] = useState({});
 
+    const fields = [titleField, 'body', 'url'];
+
+    // השדה בטופס נקרא titleField, אבל בפריט עצמו הוא יכול להיקרא אחרת (לתגובות: name)
+    const isTitle = (field) => field === titleField;
+    const readField = (field) => item[isTitle(field) ? itemTitleField : field];
+
     // רק שדות שקיימים בפריט ואינם ריקים (לפוסט: title+body, לתמונה: title+url)
-    const editableFields = EDITABLE_FIELDS.filter((field) => isNonEmptyString(item[field]));
+    const editableFields = fields.filter((field) => isNonEmptyString(readField(field)));
 
     const startEditing = () => {
-        setDraftFields(Object.fromEntries(editableFields.map((field) => [field, item[field]])));
+        setDraftFields(Object.fromEntries(editableFields.map((field) => [field, readField(field)])));
         setIsEditing(true);
     };
 
@@ -28,7 +38,8 @@ export function useItemEditor(item, onUpdate) {
         for (const field of editableFields) {
             const newValue = draftFields[field].trim();
             if (!newValue) return; // לא שומרים שדה ריק
-            if (newValue !== item[field]) changes[field] = newValue;
+            // "title" בטופס נשמר ל-DB בשם itemTitleField (לתגובות: name)
+            if (newValue !== readField(field)) changes[isTitle(field) ? itemTitleField : field] = newValue;
         }
 
         setIsEditing(false);
