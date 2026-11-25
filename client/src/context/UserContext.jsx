@@ -12,6 +12,7 @@ export function UserProvider({ children }) {
 
   const logout = () => {
     localStorage.removeItem('user');
+    sessionStorage.removeItem('data-cache');
     setUser(null);
   };
 

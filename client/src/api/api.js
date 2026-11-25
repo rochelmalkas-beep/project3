@@ -1,12 +1,21 @@
 const BASE_URL = 'http://localhost:3000';
+const TIMEOUT_MS = 8000;
 
 const JSON_HEADERS = { 'Content-Type': 'application/json' };
+
+const timeoutAfter = (ms) =>
+  new Promise((_, reject) => {
+    setTimeout(() => reject(new Error('TIMEOUT')), ms);
+  });
 
 async function sendRequest(url, options) {
   let response;
   try {
-    response = await fetch(url, options);
-  } catch {
+    response = await Promise.race([fetch(url, options), timeoutAfter(TIMEOUT_MS)]);
+  } catch (error) {
+    if (error.message === 'TIMEOUT') {
+      throw new Error('הפעולה לא אושרה, בדקו ברשימה אם היא בוצעה לפני שתנסו שוב');
+    }
     throw new Error('השרת אינו זמין, נסו שוב מאוחר יותר');
   }
   if (!response.ok) {

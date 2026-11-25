@@ -1,0 +1,99 @@
+.user-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-layout__header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  padding: var(--space-md) var(--space-xl);
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(226, 229, 239, 0.9);
+  box-shadow: var(--shadow-sm);
+}
+
+.user-layout__greeting {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin: 0;
+  font-size: var(--font-size-lg);
+  font-weight: 800;
+}
+
+.user-layout__greeting::before {
+  content: '';
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-md);
+  background: var(--color-primary-gradient);
+  box-shadow: var(--shadow-primary);
+  background-image: var(--color-primary-gradient),
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.9) 0 5px, transparent 5px),
+    linear-gradient(180deg, transparent 45%, rgba(255, 255, 255, 0.9) 45% 62%, transparent 62%);
+  background-size: cover, cover, 16px 12px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.user-layout__nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  flex-wrap: wrap;
+  padding: 6px;
+  background: var(--color-surface-2);
+  border-radius: var(--radius-full);
+}
+
+.user-layout__link {
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  color: var(--color-text-muted);
+  font-weight: 700;
+  font-size: var(--font-size-sm);
+  transition: background var(--transition), color var(--transition), box-shadow var(--transition);
+}
+
+.user-layout__link:hover {
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+.user-layout__link.active {
+  background: var(--color-surface);
+  color: var(--color-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.user-layout__nav .btn {
+  margin-right: var(--space-xs);
+}
+
+.user-layout__main {
+  flex: 1;
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-lg) var(--space-2xl);
+  animation: fade-up 0.28s ease both;
+}
+
+@media (max-width: 640px) {
+  .user-layout__header {
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .user-layout__main {
+    padding: var(--space-lg) var(--space-md) var(--space-2xl);
+  }
+}

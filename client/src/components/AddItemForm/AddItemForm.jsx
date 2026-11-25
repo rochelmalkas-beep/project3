@@ -1,4 +1,5 @@
 import { useForm } from '../../hooks/useForm';
+import './AddItemForm.css';
 
 const PLACEHOLDER_BY_FIELD = {
   title: 'כותרת חדשה',
@@ -21,12 +22,13 @@ function AddItemForm({ onAdd, initialValues = { title: '' }, requiredField = 'ti
   };
 
   return (
-    <div>
+    <div className="add-item-form">
       {Object.keys(values).map((field) => {
         const FieldTag = field === 'body' ? 'textarea' : 'input';
         return (
           <FieldTag
             key={field}
+            className={FieldTag === 'textarea' ? 'textarea' : 'input'}
             name={field}
             value={values[field]}
             onChange={handleChange}
@@ -34,8 +36,11 @@ function AddItemForm({ onAdd, initialValues = { title: '' }, requiredField = 'ti
           />
         );
       })}
-      <button onClick={handleAddClick}>הוספה</button>
-      {errorMessage && <p>{errorMessage}</p>}
+
+      <div className="add-item-form__actions">
+        <button className="btn btn-primary" onClick={handleAddClick}>הוספה</button>
+        {errorMessage && <p className="error-message">{errorMessage}</p>}
+      </div>
     </div>
   );
 }

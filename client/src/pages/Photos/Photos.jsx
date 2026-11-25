@@ -1,7 +1,11 @@
 import ItemList from "../../components/ItemList/ItemList"
-import { useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom'
+import './Photos.css'
+
 function Photos() {
-  const { albumId } = useParams();
+  const { albumId } = useParams()
+  const { state } = useLocation()
+
   const createNewPhoto = (userId, { title, url }) => ({
     title,
     albumId: Number(albumId),
@@ -10,15 +14,15 @@ function Photos() {
 
   }
   )
-
+  const albumTitle = state?.albumTitle || albumId;
   const rederExtrasPhotos = (photo) => (
-    <img src={photo.thumbnailUrl} alt={photo.title} width={150} />
+    <img className="photo-thumb" src={photo.thumbnailUrl} alt={photo.title} />
   )
 
   return (<>
     <ItemList
       resource="photos"
-      title={albumId}
+      title={albumTitle}
       params={{ albumId }}
       pageSize={10}
       renderExtras={rederExtrasPhotos}

@@ -1,10 +1,12 @@
 import { useUser } from '../../hooks/useUser';
 import { useItems } from '../../hooks/useItems';
 import { useSearchAndSort } from '../../hooks/useSearchAndSort';
-import SearchBar from '../SearchBar/SearchBar';
-import SelectField from '../SelectField/SelectField';
+import { resolvePermission, isItemSelected } from '../../utils/itemsHelpers';
+import ListToolbar from '../ListToolbar/ListToolbar';
+import ItemListStatus from '../ItemListStatus/ItemListStatus';
 import AddItemForm from '../AddItemForm/AddItemForm';
 import ItemRow from '../ItemRow/ItemRow';
+import './ItemList.css';
 
 function ItemList({
   resource,
@@ -15,6 +17,7 @@ function ItemList({
   sortOptions = [],
   createNewItem,
   renderExtras,
+  isItemSelected: checkSelection,
   collapsible = false,
   canEdit = true,
   canDelete = true,
@@ -25,54 +28,54 @@ function ItemList({
   const itemsParams = params || { userId: user.id };
   const { items, isLoading, error, hasMore, loadMore, addNewItem, updateExistingItem, removeItem } =
     useItems(resource, itemsParams, pageSize);
-  const {
-    searchField, searchText, sortField,
-    setSearchText, setSortField, changeSearchField, visibleItems,
-  } = useSearchAndSort(items, searchOptions);
+  const search = useSearchAndSort(items, searchOptions);
 
   const handleAdd = (newValues) => addNewItem(createNewItem(user.id, newValues));
 
   return (
-    <div>
-      <h2>{title}</h2>
+    <section className="item-list">
+      <div className="item-list__header">
+        <h2 className="item-list__title">{title}</h2>
+      </div>
 
-      {searchOptions.length > 0 && (
-        <SearchBar
-          searchOptions={searchOptions}
-          searchField={searchField}
-          searchText={searchText}
-          onFieldChange={changeSearchField}
-          onTextChange={setSearchText}
-        />
-      )}
-
-      {sortOptions.length > 0 && (
-        <SelectField value={sortField} onChange={setSortField} options={sortOptions} emptyLabel="ללא מיון" />
-      )}
+      <ListToolbar searchOptions={searchOptions} sortOptions={sortOptions} search={search} />
 
       <AddItemForm onAdd={handleAdd} initialValues={newItemFields} />
 
-      {isLoading && <p>טוען...</p>}
-      {error && <p>{error}</p>}
-      {!isLoading && !error && visibleItems.length === 0 && <p>לא נמצאו פריטים</p>}
+      <ItemListStatus
+        isLoading={isLoading}
+        error={error}
+        isEmpty={search.visibleItems.length === 0}
+      />
 
-      {visibleItems.map((item) => (
-        <ItemRow
-          key={item.id}
-          item={item}
-          collapsible={collapsible}
-          canEdit={typeof canEdit === 'function' ? canEdit(item) : canEdit}
-          canDelete={typeof canDelete === 'function' ? canDelete(item) : canDelete}
-          onUpdate={(changes) => updateExistingItem(item.id, changes)}
-          onDelete={() => removeItem(item.id)}
-        >
-          {renderExtras && renderExtras(item, updateExistingItem)}
-        </ItemRow>
-      ))}
+      <div className="item-list__items">
+        {search.visibleItems.map((item) => (
+          <ItemRow
+            key={item.id}
+            item={item}
+            collapsible={collapsible}
+            isSelected={isItemSelected(checkSelection, item)}
+            canEdit={resolvePermission(canEdit, item)}
+            canDelete={resolvePermission(canDelete, item)}
+            onUpdate={(changes) => updateExistingItem(item.id, changes)}
+            onDelete={() => removeItem(item.id)}
+          >
+            {renderExtras && renderExtras(item, updateExistingItem)}
+          </ItemRow>
+        ))}
+      </div>
 
-      {pageSize && hasMore && !isLoading && <button onClick={loadMore}>טען עוד</button>}
-      {pageSize && !hasMore && !isLoading && items.length > 0 && <p>{noMoreMessage}</p>}
-    </div>
+      {pageSize && (
+        <div className="item-list__footer">
+          {hasMore && !isLoading && (
+            <button className="btn btn-secondary" onClick={loadMore}>טען עוד</button>
+          )}
+          {!hasMore && !isLoading && items.length > 0 && (
+            <p className="muted-message">{noMoreMessage}</p>
+          )}
+        </div>
+      )}
+    </section>
   );
 }
 

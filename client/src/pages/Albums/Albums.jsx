@@ -1,5 +1,7 @@
 import ItemList from "../../components/ItemList/ItemList"
-import {  NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import './Albums.css';
+
 
 function Albums() {
   const searchOptions = [
@@ -13,12 +15,14 @@ function Albums() {
     }
   )
 
-const renderExtrasAlbum=(album)=>(
- 
-    
-      <NavLink to={`${album.id}/photos`}>Albums</NavLink>
-  
-)
+  const renderExtrasAlbum = (album) => (
+    <NavLink
+      className="album-link"
+      to={`${album.id}/photos`} state={{ albumTitle: album.title }}
+    >
+      {album.title}
+    </NavLink>
+  )
   return (
     <ItemList resource="albums"
       title="MY Albums"

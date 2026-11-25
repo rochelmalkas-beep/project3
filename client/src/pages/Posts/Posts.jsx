@@ -1,63 +1,48 @@
 import { useState } from 'react';
-import ItemList from '../../components/ItemList/ItemList';
-import Comments from '../../components/Comments/Comments';
 import { useUser } from '../../hooks/useUser';
+import ItemList from '../../components/ItemList/ItemList';
+import PostExtras from '../../components/PostExtras/PostExtras';
+import './Posts.css';
+
+const searchOptions = [
+  { value: 'id', label: 'מזהה' },
+  { value: 'title', label: 'כותרת' },
+];
+
+const newItemFields = { title: '', body: '' };
+
+const createNewPost = (userId, { title, body }) => ({ userId, title, body });
 
 function Posts() {
   const { user } = useUser();
   const [showAll, setShowAll] = useState(false);
   const [selectedPostId, setSelectedPostId] = useState(null);
-  const [commentsPostId, setCommentsPostId] = useState(null);
-
-  const searchOptions = [
-    { value: 'id', label: 'מזהה' },
-    { value: 'title', label: 'כותרת' },
-  ];
-
-  const newItemFields = { title: '', body: '' };
-
-  const createNewPost = (userId, { body, title }) => ({
-    userId,
-    title,
-    body,
-  });
 
   const isMine = (post) => post.userId === user.id;
 
+  const togglePost = (postId) =>
+    setSelectedPostId((previous) => (previous === postId ? null : postId));
+
+  const toggleShowAll = () => {
+    setShowAll((previous) => !previous);
+    setSelectedPostId(null);
+  };
+
   const renderExtrasPost = (post) => (
-    <div>
-      <button
-        onClick={() => setSelectedPostId((previous) => (previous === post.id ? null : post.id))}
-      >
-        {selectedPostId === post.id ? 'סגור' : 'בחר'}
-      </button>
-      {selectedPostId === post.id && (
-        <>
-          <p>{post.body}</p>
-          <button
-            onClick={() =>
-              setCommentsPostId((previous) => (previous === post.id ? null : post.id))
-            }
-          >
-            {commentsPostId === post.id ? 'הסתר תגובות' : 'הצג תגובות'}
-          </button>
-          {commentsPostId === post.id && <Comments postId={post.id} />}
-        </>
-      )}
-    </div>
+    <PostExtras
+      post={post}
+      isSelected={selectedPostId === post.id}
+      onToggle={() => togglePost(post.id)}
+    />
   );
 
   return (
-    <>
-      <button
-        onClick={() => {
-          setShowAll((previous) => !previous);
-          setSelectedPostId(null);
-          setCommentsPostId(null);
-        }}
-      >
-        {showAll ? 'הפוסטים שלי' : 'כל הפוסטים'}
-      </button>
+    <div className="posts-page">
+      <div className="posts-page__header">
+        <button className="btn btn-secondary btn-sm" onClick={toggleShowAll}>
+          {showAll ? 'הפוסטים שלי' : 'כל הפוסטים'}
+        </button>
+      </div>
 
       <ItemList
         resource="posts"
@@ -68,9 +53,10 @@ function Posts() {
         newItemFields={newItemFields}
         canEdit={isMine}
         canDelete={isMine}
+        isItemSelected={(post) => post.id === selectedPostId}
         renderExtras={renderExtrasPost}
       />
-    </>
+    </div>
   );
 }
 

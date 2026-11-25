@@ -2,79 +2,85 @@ import { useState } from 'react';
 import { useItems } from '../../hooks/useItems';
 import { useUser } from '../../hooks/useUser';
 import AddItemForm from '../AddItemForm/AddItemForm';
+import './Comments.css';
 
 const COMMENT_FIELDS = { title: '', body: '' };
 
 function Comments({ postId }) {
   const { user } = useUser();
-  const { items: comments, isLoading, error, addNewItem, updateExistingItem, removeItem } =
+  const { items, isLoading, error, addNewItem, updateExistingItem, removeItem } =
     useItems('comments', { postId });
+
   const [editingId, setEditingId] = useState(null);
-  const [draft, setDraft] = useState({ title: '', body: '' });
+  const [draft, setDraft] = useState({ name: '', body: '' });
+
+  const handleAdd = (commentValues) => addNewItem({
+    postId,
+    userId: user.id,
+    email: user.email,
+    name: commentValues.title,
+    body: commentValues.body,
+  });
 
   const startEditing = (comment) => {
     setEditingId(comment.id);
-    setDraft({ title: comment.name, body: comment.body });
+    setDraft({ name: comment.name, body: comment.body });
   };
 
-  const saveEditing = async () => {
-    const trimmedTitle = draft.title.trim();
-    const trimmedBody = draft.body.trim();
-    if (trimmedTitle && trimmedBody) {
-      await updateExistingItem(editingId, { name: trimmedTitle, body: trimmedBody });
-    }
+  const saveEditing = async (commentId) => {
+    await updateExistingItem(commentId, draft);
     setEditingId(null);
   };
 
   return (
-    <div>
-      <AddItemForm
-        initialValues={COMMENT_FIELDS}
-        onAdd={(commentValues) =>
-          addNewItem({
-            postId,
-            userId: user.id,
-            email: user.email,
-            name: commentValues.title,
-            body: commentValues.body,
-          })
-        }
-      />
+    <section className="comments">
+      <h4 className="comments__title">תגובות</h4>
 
-      {isLoading && <p>טוען...</p>}
-      {error && <p>{error}</p>}
-      {!isLoading && comments.length === 0 && <p>אין תגובות</p>}
+      {isLoading && <p className="muted-message">טוען תגובות...</p>}
+      {error && <p className="error-message">{error}</p>}
 
-      <ul>
-        {comments.map((comment) => {
-          const isMine = comment.userId === user.id;
-          return (
-            <li key={comment.id}>
-              <strong>{comment.email}</strong> — {comment.name}: {comment.body}
-              {isMine && editingId !== comment.id && (
-                <button onClick={() => startEditing(comment)}>עריכה</button>
-              )}
-              {isMine && <button onClick={() => removeItem(comment.id)}>מחיקה</button>}
-              {editingId === comment.id && (
-                <>
-                  <input
-                    value={draft.title}
-                    onChange={(event) => setDraft((previous) => ({ ...previous, title: event.target.value }))}
-                    placeholder="כותרת התגובה"
-                  />
-                  <textarea
-                    value={draft.body}
-                    onChange={(event) => setDraft((previous) => ({ ...previous, body: event.target.value }))}
-                  />
-                  <button onClick={saveEditing}>שמירה</button>
-                  <button onClick={() => setEditingId(null)}>ביטול</button>
-                </>
-              )}
-            </li>
-          );
-        })}
-      </ul>
-    </div>
+      <div className="comments__list">
+        {items.map((comment) => (
+          <div key={comment.id} className="comments__item">
+            {editingId === comment.id ? (
+              <div className="comments__edit">
+                <textarea
+                  className="textarea"
+                  value={draft.name}
+                  onChange={(event) => setDraft({ ...draft, name: event.target.value })}
+                />
+                <textarea
+                  className="textarea"
+                  value={draft.body}
+                  onChange={(event) => setDraft({ ...draft, body: event.target.value })}
+                />
+                <div className="comments__actions">
+                  <button className="btn btn-primary btn-sm" onClick={() => saveEditing(comment.id)}>שמירה</button>
+                  <button className="btn btn-secondary btn-sm" onClick={() => setEditingId(null)}>ביטול</button>
+                </div>
+              </div>
+            ) : (
+              <>
+                <div className="comments__content">
+                  <span className="comments__author">{comment.email}</span>
+                  <span>{comment.name}: {comment.body}</span>
+                </div>
+                {comment.userId === user.id && (
+                  <div className="comments__actions">
+                    <button className="btn btn-secondary btn-sm" onClick={() => startEditing(comment)}>עריכה</button>
+                    <button className="btn btn-danger btn-sm" onClick={() => removeItem(comment.id)}>מחיקה</button>
+                  </div>
+                )}
+              </>
+            )}
+          </div>
+        ))}
+      </div>
+
+      {!isLoading && items.length === 0 && <p className="muted-message">אין תגובות עדיין</p>}
+
+      <AddItemForm onAdd={handleAdd} initialValues={COMMENT_FIELDS} />
+    </section>
   );
 }
 

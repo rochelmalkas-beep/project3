@@ -1,4 +1,5 @@
 import { useUser } from '../../hooks/useUser';
+import './Info.css';
 
 function Info({ onClose }) {
   const { user } = useUser();
@@ -14,7 +15,7 @@ function Info({ onClose }) {
         <p>טלפון: {user?.phone}</p>
         <p>אתר: {user?.website || '-'}</p>
 
-        <button onClick={onClose}>X</button>
+        <button className="btn btn-secondary btn-sm" onClick={onClose}>סגירה</button>
       </div>
     </div>
   );

@@ -1,14 +1,21 @@
 import SelectField from '../SelectField/SelectField';
+import './SearchBar.css';
 
 function SearchBar({ searchOptions, searchField, searchText, onFieldChange, onTextChange }) {
   const selectedOption = searchOptions.find((option) => option.value === searchField);
 
   return (
-    <div>
-      <SelectField value={searchField} onChange={onFieldChange} options={searchOptions} />
+    <div className="search-bar">
+      <SelectField
+        className="search-bar__select"
+        value={searchField}
+        onChange={onFieldChange}
+        options={searchOptions}
+      />
 
       {selectedOption?.choices ? (
         <SelectField
+          className="search-bar__select"
           value={searchText}
           onChange={onTextChange}
           options={selectedOption.choices}
@@ -16,6 +23,7 @@ function SearchBar({ searchOptions, searchField, searchText, onFieldChange, onTe
         />
       ) : (
         <input
+          className="input search-bar__input"
           value={searchText}
           onChange={(event) => onTextChange(event.target.value)}
           placeholder="חיפוש..."

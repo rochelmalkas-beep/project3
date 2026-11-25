@@ -2,6 +2,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { useForm } from '../../hooks/useForm';
 import { useUser } from '../../hooks/useUser';
 import { getItems } from '../../api/api';
+import './auth.css';
 
 function Login() {
   const { values, setValues, handleChange, errorMessage, setErrorMessage } = useForm({
@@ -34,35 +35,39 @@ function Login() {
   };
 
   return (
-    <form onSubmit={handleLoginSubmit}>
-      <h2>כניסה</h2>
+    <div className="auth-page">
+      <form className="auth-form" onSubmit={handleLoginSubmit}>
+        <h2 className="auth-form__title">כניסה</h2>
 
-      <input
-        name="username"
-        value={values.username}
-        onChange={handleChange}
-        placeholder="שם משתמש"
-        autoComplete="username"
-        required
-      />
-      <input
-        name="password"
-        type="password"
-        value={values.password}
-        onChange={handleChange}
-        placeholder="סיסמה"
-        autoComplete="current-password"
-        required
-      />
+        <input
+          className="input"
+          name="username"
+          value={values.username}
+          onChange={handleChange}
+          placeholder="שם משתמש"
+          autoComplete="username"
+          required
+        />
+        <input
+          className="input"
+          name="password"
+          type="password"
+          value={values.password}
+          onChange={handleChange}
+          placeholder="סיסמה"
+          autoComplete="current-password"
+          required
+        />
 
-      <button type="submit">התחברות</button>
+        <button className="btn btn-primary auth-form__submit" type="submit">התחברות</button>
 
-      {errorMessage && <p>{errorMessage}</p>}
+        {errorMessage && <p className="error-message">{errorMessage}</p>}
 
-      <p>
-        אין לך חשבון? <Link to="/register">להרשמה</Link>
-      </p>
-    </form>
+        <p className="auth-form__footer">
+          אין לך חשבון? <Link to="/register">להרשמה</Link>
+        </p>
+      </form>
+    </div>
   );
 }
 

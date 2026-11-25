@@ -7,6 +7,7 @@ import Todos from './pages/Todos/Todos';
 import Posts from './pages/Posts/Posts';
 import Albums from './pages/Albums/Albums';
 import Photos from './pages/Photos/Photos';
+import Dashboard from './pages/Dashboard/Dashboard';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           </ProtectedRoute>
         }
       >
+        <Route index element={<Dashboard />} />
         <Route path="todos" element={<Todos />} />
         <Route path="posts" element={<Posts />} />
         <Route path="albums" element={<Albums />} />

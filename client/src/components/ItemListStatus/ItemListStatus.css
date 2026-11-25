@@ -1,0 +1,17 @@
+.item-list-status {
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius-md);
+  text-align: center;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  background: var(--color-surface);
+  border: 1px dashed var(--color-border);
+}
+
+.item-list-status--error {
+  color: var(--color-danger);
+  background: var(--color-danger-soft);
+  border-color: transparent;
+  border-style: solid;
+}

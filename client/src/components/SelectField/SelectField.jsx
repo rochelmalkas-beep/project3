@@ -1,6 +1,10 @@
-function SelectField({ value, onChange, options, emptyLabel }) {
+function SelectField({ value, onChange, options, emptyLabel, className = '' }) {
   return (
-    <select value={value} onChange={(event) => onChange(event.target.value)}>
+    <select
+      className={`select ${className}`.trim()}
+      value={value}
+      onChange={(event) => onChange(event.target.value)}
+    >
       {emptyLabel !== undefined && <option value="">{emptyLabel}</option>}
       {options.map((option) => (
         <option key={option.value} value={option.value}>{option.label}</option>

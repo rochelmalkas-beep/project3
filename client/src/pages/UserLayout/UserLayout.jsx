@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Outlet, NavLink, useNavigate } from 'react-router-dom';
 import { useUser } from '../../hooks/useUser';
-import Info from '../../components/Info/Info'
+import Info from '../../components/Info/Info';
+import './UserLayout.css';
 
 function UserLayout() {
   const { user, logout } = useUser();
@@ -14,20 +15,29 @@ function UserLayout() {
   };
 
   return (
-    <div>
-      <h2>שלום {user?.name}</h2>
+    <div className="user-layout">
+      <header className="user-layout__header">
+        <h2 className="user-layout__greeting">שלום {user?.name}</h2>
 
-      <nav>
-        <button onClick={() => setIsInfoOpen(true)}>Info</button>
-        <NavLink to="todos">Todos</NavLink>
-        <NavLink to="posts">Posts</NavLink>
-        <NavLink to="albums">Albums</NavLink>
-        <button onClick={handleLogoutClick}>Logout</button>
-      </nav>
-      {isInfoOpen && <Info user={user} onClose={() => setIsInfoOpen(false)} />}
+        <nav className="user-layout__nav">
+          <button className="btn btn-secondary btn-sm" onClick={() => setIsInfoOpen(true)}>
+            Info
+          </button>
+          <NavLink className="user-layout__link" to="." end>בית</NavLink>
+          <NavLink className="user-layout__link" to="todos">Todos</NavLink>
+          <NavLink className="user-layout__link" to="posts">Posts</NavLink>
+          <NavLink className="user-layout__link" to="albums">Albums</NavLink>
+          <button className="btn btn-danger btn-sm" onClick={handleLogoutClick}>
+            Logout
+          </button>
+        </nav>
+      </header>
 
+      <main className="user-layout__main">
+        <Outlet />
+      </main>
 
-      <Outlet />
+      {isInfoOpen && <Info onClose={() => setIsInfoOpen(false)} />}
     </div>
   );
 }

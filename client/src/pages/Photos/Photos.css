@@ -1,0 +1,15 @@
+.photo-thumb {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-2);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.photo-thumb:hover {
+  transform: scale(1.04);
+  box-shadow: var(--shadow-md);
+}

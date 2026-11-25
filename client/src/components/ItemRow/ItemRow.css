@@ -1,0 +1,100 @@
+.item-row {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-lg);
+  margin-bottom: var(--space-md);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: border-color var(--transition), background var(--transition),
+    box-shadow var(--transition), transform var(--transition);
+}
+
+.item-row::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 18px;
+  bottom: 18px;
+  width: 4px;
+  border-radius: var(--radius-full);
+  background: transparent;
+  transition: background var(--transition);
+}
+
+.item-row:hover {
+  border-color: #cfd4e4;
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+/* הדגשה של השורה הנבחרת (מועברת דרך prop מהעמוד) */
+.item-row--selected {
+  background: linear-gradient(180deg, #faf9ff 0%, var(--color-selected) 100%);
+  border-color: var(--color-selected-border);
+  box-shadow: var(--shadow-selected);
+  transform: none;
+}
+
+.item-row--selected::before {
+  background: var(--color-primary-gradient);
+}
+
+.item-row__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+.item-row__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  flex-wrap: wrap;
+}
+
+.item-row__id {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 10px;
+  border-radius: var(--radius-full);
+  background: var(--color-surface-2);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  color: var(--color-text-muted);
+  direction: ltr;
+}
+
+.item-row--selected .item-row__id {
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+}
+
+.item-row__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.item-row__title {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  word-break: break-word;
+}
+
+.item-row__extras {
+  padding: var(--space-md) 0 var(--space-xs);
+  border-top: 1px dashed var(--color-border);
+}
+
+.item-row__edit {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
