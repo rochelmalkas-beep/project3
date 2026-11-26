@@ -1,7 +1,7 @@
 import { useUser } from '../../hooks/useUser';
 import { useItems } from '../../hooks/useItems';
 import { useSearchAndSort } from '../../hooks/useSearchAndSort';
-import { resolvePermission, isItemSelected } from '../../utils/itemsHelpers';
+import { resolvePermission } from '../../utils/itemsHelpers';
 import ListToolbar from '../ListToolbar/ListToolbar';
 import ItemListStatus from '../ItemListStatus/ItemListStatus';
 import AddItemForm from '../AddItemForm/AddItemForm';
@@ -17,15 +17,12 @@ function ItemList({
   sortOptions = [],
   createNewItem,
   renderExtras,
-  isItemSelected: checkSelection,
-  canEdit = true,
-  canDelete = true,
+  isOwner = true,
   newItemFields = { title: '' },
-  noMoreMessage = 'אין עוד פריטים',
+  noMoreMessage = 'No more items',
   titleField = 'title',
   itemTitleField = titleField,
   requiredField = 'title',
-  defaultOpen = false,
   alwaysOpen = false,
   showId = true,
   layout = 'column',
@@ -61,12 +58,9 @@ function ItemList({
             item={item}
             titleField={titleField}
             itemTitleField={itemTitleField}
-            defaultOpen={defaultOpen}
             alwaysOpen={alwaysOpen}
             showId={showId}
-            isSelected={checkSelection ? isItemSelected(checkSelection, item) : true}
-            canEdit={resolvePermission(canEdit, item)}
-            canDelete={resolvePermission(canDelete, item)}
+            isOwner={resolvePermission(isOwner, item)}
             onUpdate={(changes) => updateExistingItem(item.id, changes)}
             onDelete={() => removeItem(item.id)}
           >
@@ -78,7 +72,7 @@ function ItemList({
       {pageSize && (
         <div className="item-list__footer">
           {hasMore && !isLoading && (
-            <button className="btn btn-secondary" onClick={loadMore}>טען עוד</button>
+            <button className="btn btn-secondary" onClick={loadMore}>Load more</button>
           )}
           {!hasMore && !isLoading && items.length > 0 && (
             <p className="muted-message">{noMoreMessage}</p>

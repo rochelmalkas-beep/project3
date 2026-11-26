@@ -3,13 +3,13 @@ import { useUser } from '../../hooks/useUser';
 import './Dashboard.css';
 
 const APP_NAME = 'NexusBoard';
-const APP_TAGLINE = 'המרחב האישי שלכם — משימות, פוסטים ותמונות במקום אחד';
+const APP_TAGLINE = 'Your personal space — tasks, posts and photos in one place';
 
 const PAGES = [
   {
     to: 'todos',
     title: 'Todos',
-    description: 'המשימות שלי',
+    description: 'My tasks',
     icon: (
       <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M9 11l3 3L22 4" />
@@ -20,7 +20,7 @@ const PAGES = [
   {
     to: 'posts',
     title: 'Posts',
-    description: 'הפוסטים שלי ושל כולם',
+    description: 'My posts and everyone else\'s',
     icon: (
       <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 20h9" />
@@ -31,7 +31,7 @@ const PAGES = [
   {
     to: 'albums',
     title: 'Albums',
-    description: 'האלבומים והתמונות שלי',
+    description: 'My albums and photos',
     icon: (
       <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <rect x="3" y="3" width="18" height="18" rx="2" />
@@ -66,7 +66,7 @@ function Dashboard() {
 
         <div className="dashboard__hero-content">
           <span className="dashboard__brand">{APP_NAME}</span>
-          <h2>שלום {user?.name}</h2>
+          <h2>Hello {user?.name}</h2>
           <p>{APP_TAGLINE}</p>
         </div>
       </section>

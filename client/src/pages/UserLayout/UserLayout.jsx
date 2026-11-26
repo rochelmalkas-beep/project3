@@ -17,16 +17,16 @@ function UserLayout() {
   return (
     <div className="user-layout">
       <header className="user-layout__header">
-        <h2 className="user-layout__greeting">שלום {user?.name}</h2>
+        <h2 className="user-layout__greeting">Hello {user?.name}</h2>
 
-        <nav className="user-layout__nav">
-          <button className="btn btn-secondary btn-sm" onClick={() => setIsInfoOpen(true)}>
-            Info
-          </button>
-          <NavLink className="user-layout__link" to="." end>בית</NavLink>
+        <nav className="user-layout__nav" dir="ltr">
+          <NavLink className="user-layout__link" to="." end>Dashboard</NavLink>
           <NavLink className="user-layout__link" to="todos">Todos</NavLink>
           <NavLink className="user-layout__link" to="posts">Posts</NavLink>
           <NavLink className="user-layout__link" to="albums">Albums</NavLink>
+          <button className="btn btn-secondary btn-sm" onClick={() => setIsInfoOpen(true)}>
+            Info
+          </button>
           <button className="btn btn-danger btn-sm" onClick={handleLogoutClick}>
             Logout
           </button>

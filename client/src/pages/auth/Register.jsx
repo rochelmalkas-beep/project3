@@ -18,7 +18,7 @@ function Register() {
 
     try {
       if (values.password !== values.verPassword) {
-        setErrorMessage('סיסמאות לא תואמות');
+        setErrorMessage('Passwords do not match');
         setValues({ ...values, password: '', verPassword: '' });
         return;
       }
@@ -26,7 +26,7 @@ function Register() {
       const users = await getItems('users', { username });
 
       if (users.length > 0) {
-        setErrorMessage('שם משתמש קיים');
+        setErrorMessage('Username already exists');
         setValues({ ...values, username: '' });
         return;
       }
@@ -43,14 +43,14 @@ function Register() {
   return (
     <div className="auth-page">
       <form className="auth-form" onSubmit={handleRegisterSubmit}>
-        <h2 className="auth-form__title">הרשמה</h2>
+        <h2 className="auth-form__title">Register</h2>
 
         <input
           className="input"
           name="username"
           value={values.username}
           onChange={handleChange}
-          placeholder="שם משתמש"
+          placeholder="Username"
           autoComplete="username"
           required
         />
@@ -60,7 +60,7 @@ function Register() {
           type="password"
           value={values.password}
           onChange={handleChange}
-          placeholder="סיסמה"
+          placeholder="Password"
           autoComplete="new-password"
           required
         />
@@ -70,17 +70,17 @@ function Register() {
           type="password"
           value={values.verPassword}
           onChange={handleChange}
-          placeholder="אימות סיסמה"
+          placeholder="Verify password"
           autoComplete="new-password"
           required
         />
 
-        <button className="btn btn-primary auth-form__submit" type="submit">הרשמה</button>
+        <button className="btn btn-primary auth-form__submit" type="submit">Register</button>
 
         {errorMessage && <p className="error-message">{errorMessage}</p>}
 
         <p className="auth-form__footer">
-          כבר יש לך חשבון? <Link to="/login">להתחברות</Link>
+          Already have an account? <Link to="/login">Sign in</Link>
         </p>
       </form>
     </div>

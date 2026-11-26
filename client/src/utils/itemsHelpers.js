@@ -36,7 +36,3 @@ export function sortItems(items, field) {
 // הרשאה יכולה להגיע כ-true/false או כפונקציה שמקבלת פריט (כמו isMine ב-Posts)
 export const resolvePermission = (permission, item) =>
   typeof permission === 'function' ? permission(item) : permission;
-
-// האם הפריט צריך להיות מודגש (בוחרים בפונקציה כמו isItemSelected ב-Posts)
-export const isItemSelected = (checkSelection, item) =>
-  typeof checkSelection === 'function' ? checkSelection(item) : false;

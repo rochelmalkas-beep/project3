@@ -11,7 +11,6 @@ function Photos() {
     albumId: Number(albumId),
     url,
     thumbnailUrl: url,
-
   }
   )
   const albumTitle = state?.albumTitle || albumId;
@@ -24,15 +23,14 @@ function Photos() {
       resource="photos"
       title={albumTitle}
       params={{ albumId }}
-      pageSize={10}
-      defaultOpen
+      pageSize={12}
       alwaysOpen
       showId={false}
       layout="row"
       renderExtras={rederExtrasPhotos}
       createNewItem={createNewPhoto}
       newItemFields={{ title: '', url: '' }}
-      noMoreMessage='אין עוד תמונות להצגה'
+      noMoreMessage='No more photos'
     />
 
   </>)

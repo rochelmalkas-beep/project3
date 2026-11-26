@@ -3,30 +3,30 @@ import { NavLink } from 'react-router-dom';
 import './Albums.css';
 
 
-function Albums() {
-  const searchOptions = [
-    { value: 'id', label: 'מזהה' },
-    { value: 'title', label: 'כותרת' },
-  ];
-  const createNewAlbum = (userId, { title }) => (
-    {
-      userId,
-      title,
-    }
-  )
+const SEARCH_OPTIONS = [
+  { value: 'id', label: 'ID' },
+  { value: 'title', label: 'Title' },
+];
 
-  const renderExtrasAlbum = (album) => (
-    <NavLink
-      className="album-link"
-      to={`${album.id}/photos`} state={{ albumTitle: album.title }}
-    >
-      {album.title}
-    </NavLink>
-  )
+const createNewAlbum = (userId, { title }) => ({
+  userId,
+  title,
+});
+
+const renderExtrasAlbum = (album) => (
+  <NavLink
+    className="album-link"
+    to={`${album.id}/photos`} state={{ albumTitle: album.title }}
+  >
+    View photos
+  </NavLink>
+);
+
+function Albums() {
   return (
     <ItemList resource="albums"
-      title="MY Albums"
-      searchOptions={searchOptions}
+      title="My Albums"
+      searchOptions={SEARCH_OPTIONS}
       createNewItem={createNewAlbum}
       renderExtras={renderExtrasAlbum}
     />)

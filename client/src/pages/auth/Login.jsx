@@ -20,7 +20,7 @@ function Login() {
       const foundUser = users[0];
 
       if (!foundUser || foundUser.password !== values.password) {
-        setErrorMessage('שם משתמש או סיסמה שגויים');
+        setErrorMessage('Incorrect username or password');
         setValues({ ...values, password: '' });
         return;
       }
@@ -37,14 +37,14 @@ function Login() {
   return (
     <div className="auth-page">
       <form className="auth-form" onSubmit={handleLoginSubmit}>
-        <h2 className="auth-form__title">כניסה</h2>
+        <h2 className="auth-form__title">Login</h2>
 
         <input
           className="input"
           name="username"
           value={values.username}
           onChange={handleChange}
-          placeholder="שם משתמש"
+          placeholder="Username"
           autoComplete="username"
           required
         />
@@ -54,17 +54,17 @@ function Login() {
           type="password"
           value={values.password}
           onChange={handleChange}
-          placeholder="סיסמה"
+          placeholder="Password"
           autoComplete="current-password"
           required
         />
 
-        <button className="btn btn-primary auth-form__submit" type="submit">התחברות</button>
+        <button className="btn btn-primary auth-form__submit" type="submit">Sign in</button>
 
         {errorMessage && <p className="error-message">{errorMessage}</p>}
 
         <p className="auth-form__footer">
-          אין לך חשבון? <Link to="/register">להרשמה</Link>
+          Don't have an account? <Link to="/register">Register</Link>
         </p>
       </form>
     </div>

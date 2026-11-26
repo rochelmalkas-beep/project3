@@ -6,23 +6,23 @@ const createNewTodo = (userId, { title }) => ({
   completed: false,
 });
 
-const searchOptions = [
-  { value: 'id', label: 'מזהה' },
-  { value: 'title', label: 'כותרת' },
+const SEARCH_OPTIONS = [
+  { value: 'id', label: 'ID' },
+  { value: 'title', label: 'Title' },
   {
     value: 'completed',
-    label: 'סטטוס',
+    label: 'Status',
     choices: [
-      { value: 'true', label: 'בוצע' },
-      { value: 'false', label: 'לא בוצע' },
+      { value: 'true', label: 'Done' },
+      { value: 'false', label: 'Not done' },
     ],
   },
 ];
 
-const sortOptions = [
-  { value: 'id', label: 'מזהה' },
-  { value: 'title', label: 'כותרת' },
-  { value: 'completed', label: 'סטטוס' },
+const SORT_OPTIONS = [
+  { value: 'id', label: 'ID' },
+  { value: 'title', label: 'Title' },
+  { value: 'completed', label: 'Status' },
 ];
 
 const renderTodoExtras = (todo, updateTodo) => (
@@ -37,10 +37,10 @@ function Todos() {
   return (
     <ItemList
       resource="todos"
-      title="המשימות שלי"
+      title="My Todos"
       createNewItem={createNewTodo}
-      searchOptions={searchOptions}
-      sortOptions={sortOptions}
+      searchOptions={SEARCH_OPTIONS}
+      sortOptions={SORT_OPTIONS}
       renderExtras={renderTodoExtras}
     />
   );

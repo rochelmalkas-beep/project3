@@ -7,15 +7,15 @@ function Info({ onClose }) {
   return (
     <div className="info-overlay">
       <div className="info-window">
-        <h3>פרטים אישיים</h3>
+        <h3>Personal Info</h3>
 
-        <p>שם מלא: {user?.name}</p>
-        <p>שם משתמש: {user?.username}</p>
-        <p>אימייל: {user?.email}</p>
-        <p>טלפון: {user?.phone}</p>
-        <p>אתר: {user?.website || '-'}</p>
+        <p>Full name: {user?.name}</p>
+        <p>Username: {user?.username}</p>
+        <p>Email: {user?.email}</p>
+        <p>Phone: {user?.phone}</p>
+        <p>Website: {user?.website || '-'}</p>
 
-        <button className="btn btn-secondary btn-sm" onClick={onClose}>סגירה</button>
+        <button className="btn btn-secondary btn-sm" onClick={onClose}>Close</button>
       </div>
     </div>
   );

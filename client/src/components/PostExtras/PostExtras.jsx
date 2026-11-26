@@ -14,7 +14,7 @@ function PostExtras({ post }) {
           className="btn btn-secondary btn-sm"
           onClick={() => setShowComments((previous) => !previous)}
         >
-          {showComments ? 'הסתר תגובות' : 'הצג תגובות'}
+          {showComments ? 'Hide comments' : 'Show comments'}
         </button>
       </div>
       {showComments && <Comments postId={post.id} />}

@@ -40,15 +40,15 @@ function RegisterDetails() {
   return (
     <div className="auth-page">
       <form className="auth-form" onSubmit={handleDetailsSubmit}>
-        <h2 className="auth-form__title">השלמת פרטים</h2>
-        <p className="auth-form__hint">שלום <strong dir="ltr">{state.username}</strong></p>
+        <h2 className="auth-form__title">Complete details</h2>
+        <p className="auth-form__hint">Hello <strong dir="ltr">{state.username}</strong></p>
 
         <input
           className="input"
           name="name"
           value={values.name}
           onChange={handleChange}
-          placeholder="שם מלא"
+          placeholder="Full name"
           autoComplete="name"
           required
         />
@@ -58,7 +58,7 @@ function RegisterDetails() {
           type="email"
           value={values.email}
           onChange={handleChange}
-          placeholder="אימייל"
+          placeholder="Email"
           autoComplete="email"
           required
         />
@@ -68,7 +68,7 @@ function RegisterDetails() {
           type="tel"
           value={values.phone}
           onChange={handleChange}
-          placeholder="טלפון"
+          placeholder="Phone"
           autoComplete="tel"
           required
         />
@@ -77,11 +77,11 @@ function RegisterDetails() {
           name="website"
           value={values.website}
           onChange={handleChange}
-          placeholder="אתר (אופציונלי)"
+          placeholder="Website (optional)"
           autoComplete="url"
         />
 
-        <button className="btn btn-primary auth-form__submit" type="submit">סיום הרשמה</button>
+        <button className="btn btn-primary auth-form__submit" type="submit">Finish registration</button>
 
         {errorMessage && <p className="error-message">{errorMessage}</p>}
       </form>

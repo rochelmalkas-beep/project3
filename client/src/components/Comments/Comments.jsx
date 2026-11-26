@@ -2,10 +2,11 @@ import ItemList from '../ItemList/ItemList';
 import { useUser } from '../../hooks/useUser';
 import './Comments.css';
 
+// התוכן קודם, והחתימה (האימייל) אחריו
 const renderCommentExtras = (comment) => (
   <>
-    <span className="comments__author" dir="ltr">{comment.email}</span>
     <span className="comments__body">{comment.body}</span>
+    <span className="comments__author" dir="ltr">{comment.email}</span>
   </>
 );
 
@@ -29,17 +30,15 @@ function Comments({ postId }) {
     <section className="comments">
       <ItemList
         resource="comments"
-        title="תגובות"
+        title="Comments"
         params={{ postId }}
         newItemFields={{ title: '', body: '' }}
         itemTitleField="name"
-        defaultOpen
         alwaysOpen
         showId={false}
         createNewItem={createNewComment(postId, user.email)}
         renderExtras={renderCommentExtras}
-        canEdit={isMine}
-        canDelete={isMine}
+        isOwner={isMine}
       />
     </section>
   );

@@ -19,14 +19,14 @@ function SearchBar({ searchOptions, searchField, searchText, onFieldChange, onTe
           value={searchText}
           onChange={onTextChange}
           options={selectedOption.choices}
-          emptyLabel="הכל"
+          emptyLabel="All"
         />
       ) : (
         <input
           className="input search-bar__input"
           value={searchText}
           onChange={(event) => onTextChange(event.target.value)}
-          placeholder="חיפוש..."
+          placeholder="Search..."
         />
       )}
     </div>

@@ -7,41 +7,40 @@ function ItemRow({
     item,
     onUpdate,
     onDelete,
-    isSelected = false,
-    canEdit = true,
-    canDelete = true,
+    isOwner = true,
     titleField = 'title',
     itemTitleField = titleField,
     showId = true,
-    defaultOpen = false,
     alwaysOpen = false,
     children,
 }) {
     const editor = useItemEditor(item, onUpdate, titleField, itemTitleField);
-    const [isExpanded, setIsExpanded] = useState(defaultOpen);
+    const [isExpanded, setIsExpanded] = useState(false);
 
     const isOpen = alwaysOpen || isExpanded;
 
     const handleDeleteClick = () => {
-        if (window.confirm('למחוק את הפריט?')) {
+        if (window.confirm('Delete this item?')) {
             onDelete();
         }
     };
 
     return (
-        <div className={`item-row${isSelected ? ' item-row--selected' : ''}`}>
-            <button
-                type="button"
-                className="item-row__head"
-                aria-expanded={isOpen}
-                onClick={() => !alwaysOpen && setIsExpanded((open) => !open)}
-            >
-                {showId && <span className="item-row__id">#{item.id}</span>}
-                <span className="item-row__title">{item[itemTitleField]}</span>
-            </button>
-
-            {children && isOpen && (
-                <div className="item-row__extras">{children}</div>
+        <div className={`item-row${isOpen ? ' item-row--selected' : ''}`}>
+            {/* בזמן עריכה הכותרת מוסתרת — היא מוצגת כשדה בתוך הטופס */}
+            {editor.isEditing ? (
+                showId && <span className="item-row__id item-row__id--editing">#{item.id}</span>
+            ) : (
+                <button
+                    type="button"
+                    className={`item-row__head${alwaysOpen ? ' item-row__head--static' : ''}`}
+                    aria-expanded={isOpen}
+                    disabled={alwaysOpen}
+                    onClick={() => !alwaysOpen && setIsExpanded((open) => !open)}
+                >
+                    {showId && <span className="item-row__id">#{item.id}</span>}
+                    <span className="item-row__title">{item[itemTitleField]}</span>
+                </button>
             )}
 
             {editor.isEditing ? (
@@ -52,22 +51,24 @@ function ItemRow({
                         onChange={editor.changeField}
                     />
                     <div className="item-row__actions">
-                        <button className="btn btn-primary btn-sm" onClick={editor.saveFields}>שמירה</button>
-                        <button className="btn btn-secondary btn-sm" onClick={editor.cancelEditing}>ביטול</button>
+                        <button className="btn btn-primary btn-sm" onClick={editor.saveFields}>Save</button>
+                        <button className="btn btn-secondary btn-sm" onClick={editor.cancelEditing}>Cancel</button>
                     </div>
                 </div>
             ) : (
-                // כפתורי עדכון/מחיקה מוצגים רק כשהפריט פתוח — כלומר במצב סקירה אין אותם
-                isOpen && (canEdit || canDelete) && (
-                    <div className="item-row__actions">
-                        {canEdit && (
-                            <button className="btn btn-secondary btn-sm" onClick={editor.startEditing}>עריכה</button>
-                        )}
-                        {canDelete && (
-                            <button className="btn btn-danger btn-sm" onClick={handleDeleteClick}>מחיקה</button>
-                        )}
-                    </div>
-                )
+                <>
+                    {children && isOpen && (
+                        <div className="item-row__extras">{children}</div>
+                    )}
+
+                    {/* כפתורי עדכון/מחיקה מוצגים רק כשהפריט פתוח — כלומר במצב סקירה אין אותם */}
+                    {isOpen && isOwner && (
+                        <div className="item-row__actions">
+                            <button className="btn btn-secondary btn-sm" onClick={editor.startEditing}>Edit</button>
+                            <button className="btn btn-danger btn-sm" onClick={handleDeleteClick}>Delete</button>
+                        </div>
+                    )}
+                </>
             )}
         </div>
     );

@@ -166,18 +166,6 @@
   "todos": [
     {
       "userId": 1,
-      "id": 4,
-      "title": "Install json-server",
-      "completed": false
-    },
-    {
-      "userId": 1,
-      "id": 5,
-      "title": "Write the login page",
-      "completed": true
-    },
-    {
-      "userId": 1,
       "id": 6,
       "title": "Test the register form",
       "completed": true
@@ -355,6 +343,12 @@
       "title": "1",
       "completed": false,
       "id": 33
+    },
+    {
+      "userId": 1,
+      "title": "לסיים כבר את הפרוייקט של  פול סטאק!!! וזריז!!",
+      "completed": false,
+      "id": 34
     }
   ],
   "posts": [

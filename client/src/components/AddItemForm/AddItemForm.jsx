@@ -2,9 +2,9 @@ import { useForm } from '../../hooks/useForm';
 import './AddItemForm.css';
 
 const PLACEHOLDER_BY_FIELD = {
-  title: 'כותרת חדשה',
-  name: 'כותרת התגובה',
-  body: 'תוכן',
+  title: 'New title',
+  name: 'Comment title',
+  body: 'Content',
 };
 
 function AddItemForm({ onAdd, initialValues = { title: '' }, requiredField = 'title' }) {
@@ -15,7 +15,7 @@ function AddItemForm({ onAdd, initialValues = { title: '' }, requiredField = 'ti
       Object.entries(values).map(([key, value]) => [key, value.trim()])
     );
     if (!trimmedValues[requiredField]) {
-      setErrorMessage('יש למלא את השדה');
+      setErrorMessage('Please fill in this field');
       return;
     }
     await onAdd(trimmedValues);
@@ -39,7 +39,7 @@ function AddItemForm({ onAdd, initialValues = { title: '' }, requiredField = 'ti
       })}
 
       <div className="add-item-form__actions">
-        <button className="btn btn-primary" onClick={handleAddClick}>הוספה</button>
+        <button className="btn btn-primary" onClick={handleAddClick}>Add</button>
         {errorMessage && <p className="error-message">{errorMessage}</p>}
       </div>
     </div>

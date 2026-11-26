@@ -25,7 +25,7 @@ function ListToolbar({ searchOptions, sortOptions, search }) {
           value={search.sortField}
           onChange={search.setSortField}
           options={sortOptions}
-          emptyLabel="ללא מיון"
+          emptyLabel="No sort"
         />
       )}
     </div>

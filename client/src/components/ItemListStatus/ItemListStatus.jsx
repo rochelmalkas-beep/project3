@@ -2,7 +2,7 @@ import './ItemListStatus.css';
 
 function ItemListStatus({ isLoading, error, isEmpty }) {
   if (isLoading) {
-    return <p className="item-list-status">טוען...</p>;
+    return <p className="item-list-status">Loading...</p>;
   }
 
   if (error) {
@@ -10,7 +10,7 @@ function ItemListStatus({ isLoading, error, isEmpty }) {
   }
 
   if (isEmpty) {
-    return <p className="item-list-status">לא נמצאו פריטים</p>;
+    return <p className="item-list-status">No items found</p>;
   }
 
   return null;
