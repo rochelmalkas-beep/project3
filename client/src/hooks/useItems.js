@@ -9,12 +9,13 @@ export function useItems(resource, params, pageSize) {
     const [error, setError] = useState('');
     const [page, setPage] = useState(1);
     const [hasMore, setHasMore] = useState(false);
+    // paramsKey משמש רק ב-useEffect — אובייקט היה מפעיל את האפקט בכל רינדור
     const paramsKey = JSON.stringify(params);
 
     useEffect(() => {
         const loadItems = async () => {
             const pagingParams = pageSize ? { _page: page, _limit: pageSize } : {};
-            const queryParams = { ...JSON.parse(paramsKey), ...pagingParams };
+            const queryParams = { ...params, ...pagingParams };
 
             if (page === 1) {
                 const cached = cache.get(resource, queryParams);
@@ -47,38 +48,35 @@ export function useItems(resource, params, pageSize) {
 
     const loadMore = () => setPage((previous) => previous + 1);
 
-    const addNewItem = async (data) => {
+    // מבצע פעולה בשרת, מבטל את המטמון, ומעדכן את הרשימה המקומית
+    const runItemAction = async (request, updateList) => {
         try {
-            const newItem = await addItem(resource, data);
+            const result = await request();
             cache.invalidate(resource);
-            setItems((previous) => [...previous, newItem]);
+            setItems((previous) => updateList(previous, result));
             setError('');
-        } catch (addError) {
-            setError(addError.message);
+        } catch (actionError) {
+            setError(actionError.message);
         }
     };
 
-    const updateExistingItem = async (id, data) => {
-        try {
-            const updatedItem = await updateItem(resource, id, data);
-            cache.invalidate(resource);
-            setItems((previous) => previous.map((item) => (item.id === id ? updatedItem : item)));
-            setError('');
-        } catch (updateError) {
-            setError(updateError.message);
-        }
-    };
+    const addNewItem = (data) =>
+        runItemAction(
+            () => addItem(resource, data),
+            (previous, newItem) => [...previous, newItem],
+        );
 
-    const removeItem = async (id) => {
-        try {
-            await deleteItem(resource, id);
-            cache.invalidate(resource);
-            setItems((previous) => previous.filter((item) => item.id !== id));
-            setError('');
-        } catch (deleteError) {
-            setError(deleteError.message);
-        }
-    };
+    const updateExistingItem = (id, data) =>
+        runItemAction(
+            () => updateItem(resource, id, data),
+            (previous, updatedItem) => previous.map((item) => (item.id === id ? updatedItem : item)),
+        );
+
+    const removeItem = (id) =>
+        runItemAction(
+            () => deleteItem(resource, id),
+            (previous) => previous.filter((item) => item.id !== id),
+        );
 
     return { removeItem, updateExistingItem, addNewItem, loadMore, hasMore, error, isLoading, items };
 }

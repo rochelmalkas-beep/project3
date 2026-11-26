@@ -39,6 +39,7 @@ function Posts() {
         createNewItem={createNewPost}
         newItemFields={NEW_ITEM_FIELDS}
         isOwner={isMine}
+        selectButton
         renderExtras={renderExtrasPost}
       />
     </div>

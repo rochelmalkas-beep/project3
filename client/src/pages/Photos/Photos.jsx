@@ -14,7 +14,7 @@ function Photos() {
   }
   )
   const albumTitle = state?.albumTitle || albumId;
-  const rederExtrasPhotos = (photo) => (
+  const renderPhotoExtras = (photo) => (
     <img className="photo-thumb" src={photo.thumbnailUrl} alt={photo.title} />
   )
 
@@ -27,7 +27,7 @@ function Photos() {
       alwaysOpen
       showId={false}
       layout="row"
-      renderExtras={rederExtrasPhotos}
+      renderExtras={renderPhotoExtras}
       createNewItem={createNewPhoto}
       newItemFields={{ title: '', url: '' }}
       noMoreMessage='No more photos'

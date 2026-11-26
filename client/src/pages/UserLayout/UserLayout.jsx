@@ -18,7 +18,6 @@ function UserLayout() {
     <div className="user-layout">
       <header className="user-layout__header">
         <h2 className="user-layout__greeting">Hello {user?.name}</h2>
-
         <nav className="user-layout__nav" dir="ltr">
           <NavLink className="user-layout__link" to="." end>Dashboard</NavLink>
           <NavLink className="user-layout__link" to="todos">Todos</NavLink>

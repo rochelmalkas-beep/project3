@@ -12,6 +12,7 @@ function ItemRow({
     itemTitleField = titleField,
     showId = true,
     alwaysOpen = false,
+    selectButton = false,
     children,
 }) {
     const editor = useItemEditor(item, onUpdate, titleField, itemTitleField);
@@ -31,16 +32,24 @@ function ItemRow({
             {editor.isEditing ? (
                 showId && <span className="item-row__id item-row__id--editing">#{item.id}</span>
             ) : (
-                <button
-                    type="button"
-                    className={`item-row__head${alwaysOpen ? ' item-row__head--static' : ''}`}
-                    aria-expanded={isOpen}
-                    disabled={alwaysOpen}
-                    onClick={() => !alwaysOpen && setIsExpanded((open) => !open)}
+                <div
+                    className={`item-row__head${selectButton ? ' item-row__head--buttoned' : ''}`}
+                    role={!alwaysOpen && !selectButton ? 'button' : undefined}
+                    aria-expanded={!alwaysOpen && !selectButton ? isOpen : undefined}
+                    onClick={() => !alwaysOpen && !selectButton && setIsExpanded((open) => !open)}
                 >
                     {showId && <span className="item-row__id">#{item.id}</span>}
                     <span className="item-row__title">{item[itemTitleField]}</span>
-                </button>
+                    {selectButton && (
+                        <button
+                            type="button"
+                            className="btn btn-secondary btn-sm item-row__select"
+                            onClick={() => setIsExpanded((open) => !open)}
+                        >
+                            {isOpen ? 'Unselect' : 'Select'}
+                        </button>
+                    )}
+                </div>
             )}
 
             {editor.isEditing ? (

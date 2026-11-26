@@ -6,10 +6,10 @@
   gap: var(--space-sm);
   padding: var(--space-lg) var(--space-xl);
   margin-bottom: var(--space-md);
-  background: linear-gradient(145deg,#293e49,#22343f);
+  background: linear-gradient(145deg, #243642, #202f39);
   border: 1px solid #3b535e;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-card);
+  border-radius: 8px 22px 8px 22px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
   transition: all var(--transition);
 }
 
@@ -17,32 +17,38 @@
   content: '';
   position: absolute;
   right: 0;
-  top: 18px;
-  bottom: 18px;
-  width: 4px;
-  border-radius: var(--radius-full);
+  top: 14px;
+  bottom: 14px;
+  width: 5px;
+  border-radius: 0 8px 8px 0;
   background: transparent;
   transition: background var(--transition);
 }
 
 .item-row:hover {
   border-color: #20cdbb;
-  box-shadow: 0 12px 28px rgba(0,0,0,.25);
+  background: linear-gradient(145deg, #2a414b, #243842);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
   transform: translateY(-3px);
 }
 
 .item-row:hover::before {
-  background: linear-gradient(180deg,#20cdbb,#ff795f);
+  background: linear-gradient(180deg, #20cdbb, #ff795f);
 }
 
 .item-row--selected {
-  background: linear-gradient(120deg,#294c54,#30434b);
+  background: linear-gradient(145deg, #294c54, #243d46);
   border-color: #20cdbb;
-  box-shadow: var(--shadow-selected);
+  box-shadow: 0 0 0 2px rgba(32, 205, 187, 0.13),
+              0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.item-row--selected .item-row__title {
+  color: #c6f36a;
 }
 
 .item-row--selected::before {
-  background: linear-gradient(180deg,#20cdbb,#f4bd55);
+  background: #c6f36a;
 }
 
 .item-row__head {
@@ -60,10 +66,15 @@
   cursor: pointer;
 }
 
-/* פריט שנעול בפתיחה (alwaysOpen) — אין סמן יד, אין ריחוף ואין מסגרת לחיצה */
-.item-row__head--static {
+/* כשיש כפתור בחירה — הכותרת עצמה לא לוחצת, רק הכפתור */
+.item-row__head--buttoned {
   cursor: default;
-  pointer-events: none;
+}
+
+/* כפתור הבחירה יושב בקצה השורה של הכותרת */
+.item-row__select {
+  margin-left: auto;
+  flex-shrink: 0;
 }
 
 .item-row__actions {
@@ -88,7 +99,7 @@
 }
 
 .item-row--selected .item-row__id {
-  background: rgba(32,205,187,.17);
+  background: rgba(32, 205, 187, 0.17);
   color: #54e2d3;
 }
 
@@ -108,10 +119,18 @@
   color: #42dfce;
 }
 
+.item-row__head--buttoned:hover .item-row__title {
+  color: inherit;
+}
+
+.item-row--selected .item-row__head--buttoned:hover .item-row__title {
+  color: #c6f36a;
+}
+
 .item-row__extras {
-  padding: var(--space-md) 0 var(--space-xs);
-  border-top: 1px dashed #48616b;
-  animation: fade-up .22s ease both;
+  padding: 20px 0 var(--space-xs);
+  border-top: 1px solid #3b5961;
+  animation: fade-up 0.22s ease both;
 }
 
 .item-row__edit {
@@ -132,47 +151,4 @@
   .item-row {
     padding: var(--space-md);
   }
-}
-
-
-/* עיצוב חדש לכרטיסים */
-.item-row {
-  border-radius: 8px 22px 8px 22px;
-  border: 1px solid #3b535e;
-  background: linear-gradient(145deg, #243642, #202f39);
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
-}
-
-.item-row::before {
-  width: 5px;
-  top: 14px;
-  bottom: 14px;
-  border-radius: 0 8px 8px 0;
-}
-
-.item-row:hover {
-  border-color: #20cdbb;
-  background: linear-gradient(145deg, #2a414b, #243842);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
-  transform: translateY(-3px);
-}
-
-.item-row--selected {
-  background: linear-gradient(145deg, #294c54, #243d46);
-  border-color: #20cdbb;
-  box-shadow: 0 0 0 2px rgba(32, 205, 187, 0.13),
-              0 10px 25px rgba(0, 0, 0, 0.2);
-}
-
-.item-row--selected .item-row__title {
-  color: #c6f36a;
-}
-
-.item-row--selected::before {
-  background: #c6f36a;
-}
-
-.item-row__extras {
-  border-top: 1px solid #3b5961;
-  padding-top: 20px;
 }

@@ -73,94 +73,13 @@
       }
     },
     {
-      "username": "רחל",
-      "password": "1",
-      "name": "רחל מלכה",
-      "email": "ROCHELMALKAS@GMAIL.COM",
-      "phone": "05453636373",
-      "website": "ADLFKJA",
-      "id": 4
-    },
-    {
-      "username": "ralsdkfj",
-      "password": "1",
-      "name": "a;odkjf",
-      "email": "1@gmail.com",
-      "phone": "1",
-      "website": "1",
-      "id": 5
-    },
-    {
-      "username": "ROCHEL",
-      "password": "1",
-      "name": "ALKSJF",
-      "email": "ADF@GMAIL.COM",
-      "phone": "ADF",
-      "website": "",
-      "id": 6
-    },
-    {
-      "username": "r",
-      "password": "1",
-      "name": "adf",
-      "email": "adsf@gmail.com",
-      "phone": "1",
-      "website": "",
-      "id": 7
-    },
-    {
-      "username": "1",
-      "password": "1",
-      "name": "1",
-      "email": "1@GMAIL.COM",
-      "phone": "1",
-      "website": "",
-      "id": 8
-    },
-    {
-      "username": "1",
-      "password": "2",
-      "name": "2",
-      "email": "2@gmail.com",
-      "phone": "2",
-      "website": "",
-      "id": 9
-    },
-    {
-      "username": "login",
-      "password": "1",
-      "name": "llla",
-      "email": "lla@gmail.com",
-      "phone": "1",
-      "website": "1",
-      "id": 10
-    },
-    {
-      "username": "12",
-      "password": "1",
-      "name": "1",
-      "email": "1@gmail.com",
-      "phone": "1",
-      "website": "1",
-      "id": 11
-    },
-    {
-      "username": "rr",
-      "password": "1",
-      "name": "r",
-      "email": "r@gmail.com",
-      "phone": "r",
-      "website": "r",
-      "id": 12
-    },
-    {
-      "username": "11",
-      "password": "1",
-      "name": "11",
-      "email": "11@gmail.com",
-      "phone": "iho",
-      "website": "kj",
-      "id": 13
+      "id": 4,
+      "name": "Demo User",
+      "username": "demo",
+      "email": "demo@example.com",
+      "password": "demo1234",
+      "phone": "050-0000000",
+      "website": "example.com"
     }
   ],
   "todos": [
@@ -315,40 +234,28 @@
       "completed": true
     },
     {
-      "title": "משימה חדשה",
       "userId": 1,
-      "completed": true,
-      "id": 31
+      "id": 31,
+      "title": "Add a search bar",
+      "completed": true
     },
     {
-      "title": "משימה חדשה",
       "userId": 1,
-      "completed": true,
-      "id": 32
-    },
-    {
-      "userId": 8,
-      "id": "49068697-bc1e-49e8-acff-7d500b10bf06",
-      "title": "adf",
-      "completed": false
-    },
-    {
-      "userId": 8,
-      "id": "ece22b81-46a6-4d37-8559-70c2dcddbdcc",
-      "title": "asdf",
+      "id": 32,
+      "title": "Write the README",
       "completed": false
     },
     {
       "userId": 1,
-      "title": "1",
-      "completed": false,
-      "id": 33
+      "id": 33,
+      "title": "Check the pagination",
+      "completed": false
     },
     {
-      "userId": 1,
-      "title": "לסיים כבר את הפרוייקט של  פול סטאק!!! וזריז!!",
-      "completed": false,
-      "id": 34
+      "userId": 4,
+      "id": 34,
+      "title": "Try the demo user",
+      "completed": false
     }
   ],
   "posts": [
@@ -431,22 +338,10 @@
       "body": "Always show the user a clear message when a request fails.\nDo not leave the screen empty without an explanation."
     },
     {
-      "userId": 1,
-      "title": "adf",
-      "body": "adsf",
-      "id": 14
-    },
-    {
-      "userId": 1,
-      "title": "d",
-      "body": "d",
-      "id": 15
-    },
-    {
-      "userId": 8,
-      "title": "שדגכ",
-      "body": "שגדכשדגכשדגכ",
-      "id": 16
+      "userId": 4,
+      "id": 14,
+      "title": "My first post",
+      "body": "This is the demo account.\nYou can add, edit and delete my own posts."
     }
   ],
   "comments": [
@@ -756,35 +651,11 @@
     },
     {
       "postId": 2,
-      "userId": 8,
-      "name": "1",
-      "email": "1@GMAIL.COM",
-      "body": "י1וט1א71א1",
-      "id": 40
-    },
-    {
-      "postId": 2,
-      "userId": 8,
-      "name": "1",
-      "email": "1@GMAIL.COM",
-      "body": "11111",
-      "id": 41
-    },
-    {
-      "postId": 16,
-      "userId": 8,
-      "email": "1@GMAIL.COM",
-      "name": "שגדכשדגכ",
-      "body": "שדגכשדגכשדגכ",
-      "id": 42
-    },
-    {
-      "postId": 2,
-      "userId": 1,
-      "email": "Sincere@april.biz",
-      "name": "כיגשדיכןושדג",
-      "body": "ידגחשכםד",
-      "id": 43
+      "userId": 4,
+      "id": 40,
+      "name": "Welcome!",
+      "email": "demo@example.com",
+      "body": "Nice to see a demo account here."
     }
   ],
   "albums": [
@@ -817,26 +688,6 @@
       "userId": 3,
       "id": 6,
       "title": "Flowers"
-    },
-    {
-      "userId": 8,
-      "title": "asdf",
-      "id": 7
-    },
-    {
-      "userId": 13,
-      "title": "lkh",
-      "id": 9
-    },
-    {
-      "userId": 1,
-      "title": "asdf",
-      "id": 10
-    },
-    {
-      "userId": 8,
-      "title": "ךי",
-      "id": 11
     }
   ],
   "photos": [
@@ -1595,13 +1446,6 @@
       "title": "Flowers - photo 12",
       "url": "https://picsum.photos/seed/108/600/400",
       "thumbnailUrl": "https://picsum.photos/seed/108/150/150"
-    },
-    {
-      "title": "adsf",
-      "albumId": 10,
-      "url": "adf",
-      "thumbnailUrl": "adf",
-      "id": 111
     }
   ]
 }

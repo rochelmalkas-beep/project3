@@ -6,6 +6,7 @@ import ListToolbar from '../ListToolbar/ListToolbar';
 import ItemListStatus from '../ItemListStatus/ItemListStatus';
 import AddItemForm from '../AddItemForm/AddItemForm';
 import ItemRow from '../ItemRow/ItemRow';
+import ItemListPagination from '../ItemListPagination/ItemListPagination';
 import './ItemList.css';
 
 function ItemList({
@@ -24,6 +25,7 @@ function ItemList({
   itemTitleField = titleField,
   requiredField = 'title',
   alwaysOpen = false,
+  selectButton = false,
   showId = true,
   layout = 'column',
 }) {
@@ -59,6 +61,7 @@ function ItemList({
             titleField={titleField}
             itemTitleField={itemTitleField}
             alwaysOpen={alwaysOpen}
+            selectButton={selectButton}
             showId={showId}
             isOwner={resolvePermission(isOwner, item)}
             onUpdate={(changes) => updateExistingItem(item.id, changes)}
@@ -70,14 +73,13 @@ function ItemList({
       </div>
 
       {pageSize && (
-        <div className="item-list__footer">
-          {hasMore && !isLoading && (
-            <button className="btn btn-secondary" onClick={loadMore}>Load more</button>
-          )}
-          {!hasMore && !isLoading && items.length > 0 && (
-            <p className="muted-message">{noMoreMessage}</p>
-          )}
-        </div>
+        <ItemListPagination
+          hasMore={hasMore}
+          isLoading={isLoading}
+          itemsCount={items.length}
+          loadMore={loadMore}
+          noMoreMessage={noMoreMessage}
+        />
       )}
     </section>
   );

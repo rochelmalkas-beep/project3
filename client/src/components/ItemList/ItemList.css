@@ -72,12 +72,6 @@
   border-top: none;
 }
 
-.item-list__footer {
-  display: flex;
-  justify-content: center;
-  padding-top: 10px;
-}
-
 @media (max-width: 520px) {
   .item-list__items--row {
     grid-template-columns: repeat(2, minmax(0, 1fr));
